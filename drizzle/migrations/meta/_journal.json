@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1792824333371,
+      "tag": "0000_origin13_content_editor",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792824556164,
+      "tag": "0001_restrict_admin_trigger_execution",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793017811821,
+      "tag": "0002_website_publishing_controls",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793024828840,
+      "tag": "0003_portfolio_project_kinds",
+      "breakpoints": true
+    }
+  ]
+}

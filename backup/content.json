@@ -1,0 +1,1737 @@
+[
+  {
+    "key": "cover_portfolio",
+    "value": "storage:covers/portfolio-33b4b99c-91e0-4478-9a5f-84c02419d11f.jpg",
+    "updated_at": "2026-10-26T07:29:22.201+00:00"
+  },
+  {
+    "key": "cover_about",
+    "value": "storage:covers/about-78d736d1-ca3b-4356-b093-cf08384a3fd4.jpg",
+    "updated_at": "2026-10-26T08:16:06.24+00:00"
+  },
+  {
+    "key": "cover_services",
+    "value": "storage:covers/services-acc19c2b-27bc-4034-879c-39f59915e1be.jpg",
+    "updated_at": "2026-10-26T08:16:17.579+00:00"
+  },
+  {
+    "key": "home_slides",
+    "value": "[{\"id\":\"hero-documentary\",\"tag\":\"Documentary Films & Photography\",\"headline\":\"The Truth, In Motion.\",\"subheadline\":\"We go where the story lives. Cinematic filmmaking and raw photojournalism that capture the unfiltered pulse of East Africa, told with dignity, depth, and a proximity that defies distance.\",\"buttonLabel\":\"Experience the Work\",\"buttonTo\":\"/portfolio\"},{\"id\":\"hero-events\",\"tag\":\"Live Event Coverage & Broadcasting\",\"headline\":\"Capturing the Now.\",\"subheadline\":\"When the room goes live, there are no second takes. Flawless multicamera broadcast engineering that turns high stakes summits and cultural milestones into borderless global experiences.\",\"buttonLabel\":\"See Our Setup\",\"buttonTo\":\"/services\",\"image\":\"storage:home/hero-events-6a804cca-efc6-499f-8a4b-2703bd8cb75f.jpg\"},{\"id\":\"hero-branding\",\"tag\":\"Brand Design & Visual Identity\",\"headline\":\"Visuals That Speak Volumes.\",\"subheadline\":\"A brand is more than a logo; it is a legacy. We craft striking visual identities and bold design systems that command attention and anchor your institutional authority.\",\"buttonLabel\":\"View Brand Systems\",\"buttonTo\":\"/portfolio\",\"image\":\"storage:home/hero-branding-c5da7ea4-2cd6-48a6-89f0-65b5d2373207.jpg\"},{\"id\":\"hero-digital\",\"tag\":\"Digital Marketing & Campaigns\",\"headline\":\"Igniting Digital Movements.\",\"subheadline\":\"We do not just add to the noise; we cut right through it. Precision campaigns and highly targeted digital strategies designed to spark conversations, move audiences, and deliver undeniable impact.\",\"buttonLabel\":\"Amplify Your Reach\",\"buttonTo\":\"/services\",\"image\":\"storage:home/hero-digital-e95e3765-b6c5-4e34-9bba-2ef1953eb618.jpg\"},{\"id\":\"hero-communications\",\"tag\":\"Strategic Communications & Creative Direction\",\"headline\":\"Shaping the Narrative.\",\"subheadline\":\"Complex missions require visionary translation. We provide the creative compass and strategic messaging to bridge the gap between your highest ambitions and the public imagination.\",\"buttonLabel\":\"Start the Conversation\",\"buttonTo\":\"/contact\",\"image\":\"storage:home/hero-communications-07e5a8b0-3e29-498e-bc21-73def02bc015.jpg\"}]",
+    "updated_at": "2026-10-26T08:16:34.296+00:00"
+  },
+  {
+    "key": "home_stats",
+    "value": "[{\"value\":\"12+\",\"label\":\"Years in the field\"},{\"value\":\"5\",\"label\":\"Countries operated\"},{\"value\":\"60+\",\"label\":\"Testimonies recorded for a single series\"},{\"value\":\"4K\",\"label\":\"Cinema-grade delivery\"}]",
+    "updated_at": "2026-10-26T08:16:34.296+00:00"
+  },
+  {
+    "key": "home_intro",
+    "value": "We are Origin 13, a communications team based in Ethiopia. We make films, photographs, designs and campaigns that help you share your work with the people you want to reach.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "home_work_title",
+    "value": "Our work, told with care.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_intro",
+    "value": "We are a communications team based in Addis Ababa. We make films, take photographs, cover events and help organizations with design and campaigns.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_story",
+    "value": "For more than 12 years our team has worked across Ethiopia, Kenya, Somalia, Djibouti and South Sudan — in laboratories, rural communities, courtrooms and highland farms.\n\nWe believe the people in front of the lens deserve the same respect as the institutions behind the project. That is why we spend time before we film, ask before we photograph, and stay long enough to understand.\n\nWe make films and photographs that show the work clearly and treat people with respect.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_team",
+    "value": "[{\"id\":\"geremew\",\"name\":\"Geremew Tigabu\",\"role\":\"GM, Lead Photographer and Director\",\"portrait\":\"storage:team/cb6d4452-f09f-4791-9f31-e3227ead9652.jpg\"},{\"id\":\"meliksenay\",\"name\":\"Meliksenay Debas\",\"role\":\"Director of Visuals\",\"portrait\":\"placeholder:meliksenay\"},{\"id\":\"kidus\",\"name\":\"Kidus Yoseph\",\"role\":\"Senior Editor\",\"portrait\":\"placeholder:kidus\"},{\"id\":\"brook\",\"name\":\"Brook Getachew\",\"role\":\"Brand Design Consultant\",\"portrait\":\"placeholder:brook\"}]",
+    "updated_at": "2026-10-26T14:02:46.285+00:00"
+  },
+  {
+    "key": "portfolio_service_documentary_title",
+    "value": "Documentary Films & Photography",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_experience",
+    "value": "For more than 12 years, our team has worked with organizations across Ethiopia and East Africa. From filming in rural communities to covering events and creating brand designs, we bring practical experience to every project.\n\nThat experience helps us ask the right questions, plan for the conditions on the ground and keep the work focused on your goals. We understand that each project needs clear communication, careful preparation and respect for the people involved.\n\nWe bring our skills in film, photography, editing, design and communications together as one team. From the first conversation to the final files, we work with you to make sure the result is clear, useful and ready to share.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "services_intro",
+    "value": "Films, photography, live events, design and campaigns. One team, based in Addis Ababa and working across East Africa.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_intro",
+    "value": "An integrated creative agency spanning film production, live broadcasting, branding, campaigns, and strategic communications. Rooted in Ethiopia, we scale world-class creative solutions for clients across the globe.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_documentary_summary",
+    "value": "We film real stories and take photographs that show your work and the people behind it.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_documentary_formats",
+    "value": "Films\nPhoto essays\nField reports",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_events_title",
+    "value": "Live Event Coverage & Broadcasting",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_events_summary",
+    "value": "We record and stream your events so people can take part from anywhere.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_events_formats",
+    "value": "Live streams\nRecordings\nHighlight reels",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_branding_title",
+    "value": "Brand Design & Visual Identity",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_branding_summary",
+    "value": "We give your organization a clear, consistent look, in print and online.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_branding_formats",
+    "value": "Logos\nGuidelines\nReports\nExhibitions",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_digital_title",
+    "value": "Digital Marketing & Campaigns",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_digital_summary",
+    "value": "We help you reach the right people, share your message and track what works.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_digital_formats",
+    "value": "Social posts\nAds\nMonthly results",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_communications_title",
+    "value": "Strategic Communications & Creative Direction",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_communications_summary",
+    "value": "We turn your goals into clear messages and guide the creative work from start to finish.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_service_communications_formats",
+    "value": "Plans\nKey messages\nCreative direction",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_brand_abbro_name",
+    "value": "Abbro",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_brand_abbro_description",
+    "value": "E-commerce platform · Addis Ababa, Ethiopia",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_brand_macha_name",
+    "value": "Macha Studios",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-doc-2_title",
+    "value": "The Cold Chain Sentinel",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_brand_macha_description",
+    "value": "Documentary-style wedding photography & films · Addis Ababa, Ethiopia",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-doc-1_title",
+    "value": "Misting the Highland Seedlings",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-doc-1_blurb",
+    "value": "Nursery work and community food security, filmed for the Global Food Banking Network.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-doc-2_blurb",
+    "value": "Inside the laboratories behind continental disease surveillance.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-doc-3_title",
+    "value": "Under the Net",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-doc-3_blurb",
+    "value": "A quiet study of the everyday rituals that protect families from malaria.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-evt-1_title",
+    "value": "Summit Live Coverage",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-evt-1_blurb",
+    "value": "Multi-camera live streaming for a continental conference.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-evt-2_title",
+    "value": "On Stage",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-evt-2_blurb",
+    "value": "Full event coverage, from the main stage to the closing panel.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-evt-3_title",
+    "value": "Highlight Reels",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-evt-3_blurb",
+    "value": "Same-day highlight videos ready for social media.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-kit_title",
+    "value": "Abbro — Brand Kit",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-kit_blurb",
+    "value": "Logo, colors and stationery concept.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-challenge_title",
+    "value": "Abbro — Making online shopping feel safe.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-challenge_blurb",
+    "value": "For many shoppers in Addis Ababa, buying online still feels uncertain. Abbro needed an identity that felt modern and energetic enough to stand out on a phone screen, yet warm and dependable enough to earn first-time trust.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-solution_title",
+    "value": "Abbro — Two people, one connection.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-solution_blurb",
+    "value": "The symbol shows two figures joined by a single line — a buyer and a seller, linked. Set inside a rounded yellow square, it reads clearly as an app icon. A friendly, rounded lowercase wordmark keeps the brand approachable and easy to say.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-palette_title",
+    "value": "Abbro — A colour that means “go”.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-palette_blurb",
+    "value": "A bright signal yellow carries the brand’s optimism and is used for anything that invites action. Deep black brings confidence and clarity, while white and kraft keep the system calm and practical across screens and packaging.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-type_title",
+    "value": "Abbro — Bold, rounded, friendly.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-type_blurb",
+    "value": "Abbro is a custom typeface drawn for the brand: heavy, even strokes, soft circular bowls and rounded lowercase shapes that feel friendly and confident. Made only for Abbro, it gives the name a voice no other shop can borrow, and stays legible from an app icon to the side of a van.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-pattern_title",
+    "value": "Abbro — A network of connections.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-pattern_blurb",
+    "value": "The connecting line from the symbol extends into a network pattern of dots and links — every node a person, every line a delivery. It wraps tissue paper, mailers and social posts, so the idea of “together” travels with every order.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-1_title",
+    "value": "Abbro — Packaging",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-1_blurb",
+    "value": "Delivery packaging concept.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-2_title",
+    "value": "Abbro — Online Store",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-2_blurb",
+    "value": "Desktop and mobile shopping concept.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-kit_title",
+    "value": "Macha Studios — Brand Kit",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-kit_blurb",
+    "value": "Logo, colors and stationery concept.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-challenge_title",
+    "value": "Macha Studios — Quiet in a loud market.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-challenge_blurb",
+    "value": "Wedding photography is crowded with ornate, glossy branding. Macha needed to feel premium and editorial without decoration — a brand that steps back, so the couple’s real moments can lead.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-solution_title",
+    "value": "Macha Studios — The frame as a promise.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-solution_blurb",
+    "value": "The symbol is a single open frame with one softened corner — a viewfinder, a photograph and an album at once. The gap in the line stands for moments that are never staged. Clean capitals give the wordmark a calm, timeless confidence.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-palette_title",
+    "value": "Macha Studios — Ivory and charcoal.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-palette_blurb",
+    "value": "A restrained palette of warm ivory and deep charcoal recalls fine-art paper and darkroom prints. Soft linen and a muted stone grey add texture, letting the photographs bring all the colour.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-type_title",
+    "value": "Macha Studios — Editorial and calm.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "footer_studio_label",
+    "value": "Studio",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "footer_contact_label",
+    "value": "Contact",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "footer_top",
+    "value": "Back to top",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-type_blurb",
+    "value": "Montserrat in spaced capitals gives headings the feel of a gallery title card, while its lighter weights keep captions, letters and invoices quiet and elegant.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-album_title",
+    "value": "Macha Studios — Album & Packaging",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-album_blurb",
+    "value": "Wedding album and film delivery concept.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-screen_title",
+    "value": "Macha Studios — Website",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-screen_blurb",
+    "value": "Desktop and mobile gallery concept.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-dig-1_title",
+    "value": "Campaigns That Reach People",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-dig-1_blurb",
+    "value": "Social media campaigns with clear tracking of what works.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-dig-2_title",
+    "value": "Community Growth",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-dig-2_blurb",
+    "value": "Targeted online advertising and public outreach.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-com-1_title",
+    "value": "Stories With Direction",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-com-1_blurb",
+    "value": "Creative direction from the first idea to the final file.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-com-2_title",
+    "value": "Common Soil",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_work_w-com-2_blurb",
+    "value": "Visual direction for peace dialogue campaigns.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "seo_home_title",
+    "value": "Origin 13 Communication — Documentary Film & Visual Storytelling, Ethiopia",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "seo_home_description",
+    "value": "Films, photography, live events, brand design and campaigns from an Addis Ababa team working across East Africa.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "seo_about_title",
+    "value": "About — Origin 13 Communication",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "seo_about_description",
+    "value": "Meet Origin 13, an Addis Ababa team making films, photographs, designs and campaigns across East Africa.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "seo_services_title",
+    "value": "Films, Events, Design & Marketing Services | Origin 13",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "seo_services_description",
+    "value": "Documentary films and photography, live events, brand design, digital marketing and communications from Origin 13 in Addis Ababa.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "seo_portfolio_title",
+    "value": "Portfolio — Films, Events, Brands & Campaigns | Origin 13",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "seo_portfolio_description",
+    "value": "Work from all five Origin 13 services: documentaries, live event coverage, brand design, digital campaigns and communication plans.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "seo_contact_title",
+    "value": "Contact | Origin 13 Communication",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "seo_contact_description",
+    "value": "Contact Origin 13 in Addis Ababa for films, photography, event coverage, design, marketing and communications.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "home_identity",
+    "value": "Origin 13 Communication PLC · Addis Ababa",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "home_selected_label",
+    "value": "Selected work",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "home_work_link",
+    "value": "See our work",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "home_pillars_label",
+    "value": "How we work",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "home_pillars_title",
+    "value": "Good work starts with listening.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "home_services_label",
+    "value": "Our services",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "home_services_title",
+    "value": "What we do",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "home_partners_label",
+    "value": "Trusted by institutions shaping the continent",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_eyebrow",
+    "value": "About Origin 13",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_title",
+    "value": "Based in Ethiopia. Working across East Africa.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_story_label",
+    "value": "Our story",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_story_title",
+    "value": "Local knowledge. Careful work.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_team_label",
+    "value": "Our team",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_team_title",
+    "value": "The people behind Origin 13.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_portrait_note",
+    "value": "Generated portraits are temporary, not actual team photos.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_experience_label",
+    "value": "Our experience",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_years",
+    "value": "12+",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_experience_title",
+    "value": "Years of working together. Experience in every project.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_partners_label",
+    "value": "Our partners",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_partners_title",
+    "value": "Organizations we work with.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "about_partners_link",
+    "value": "See the work we made together",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "services_eyebrow",
+    "value": "Origin 13 Communication",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "services_title",
+    "value": "Our services.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "services_index_label",
+    "value": "Five services. One team.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "services_offer_label",
+    "value": "What we offer",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "services_brand_caption",
+    "value": "Abbro · Packaging mockup concept · Addis Ababa",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "services_process_label",
+    "value": "Our process",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "services_process_title",
+    "value": "How we work",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "services_cta_title",
+    "value": "Have a project in mind?",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "services_cta_body",
+    "value": "Tell us what you need. Let’s make it happen.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "services_cta_button",
+    "value": "Let’s talk",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_eyebrow",
+    "value": "Our work",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_title",
+    "value": "Everything we make.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_index_label",
+    "value": "Choose a service",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_identity_label",
+    "value": "Full identity case studies",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_uploads_label",
+    "value": "From the studio",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_uploads_title",
+    "value": "Latest uploads",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_eyebrow",
+    "value": "Get in touch",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_title",
+    "value": "Let’s start a conversation.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_email_label",
+    "value": "Email",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_phone_label",
+    "value": "Phone",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_address_label",
+    "value": "Address",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_hours_label",
+    "value": "Office hours",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_reply_note",
+    "value": "We usually reply within one business day. For time-sensitive event coverage, please mention your dates.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_form_title",
+    "value": "Tell us about your project",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_name_label",
+    "value": "Full name *",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_name_placeholder",
+    "value": "Your name",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_org_label",
+    "value": "Organization",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_org_placeholder",
+    "value": "Your organization",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_form_email_label",
+    "value": "Email *",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_email_placeholder",
+    "value": "you@organization.org",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_service_label",
+    "value": "Service *",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_service_placeholder",
+    "value": "Choose a service",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_service_other",
+    "value": "Something else",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_message_label",
+    "value": "Message *",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_message_placeholder",
+    "value": "Goals, locations, timeline, budget range…",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_submit",
+    "value": "Send message",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_thanks",
+    "value": "Thank you.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_success",
+    "value": "Your email app should have opened with your message ready to send. If it didn't, write to us directly at",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "contact_another",
+    "value": "Send another message",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "footer_eyebrow",
+    "value": "Work with Origin 13",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "footer_title",
+    "value": "Have a project in mind?",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "footer_cta",
+    "value": "Let’s talk",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "footer_rights",
+    "value": "All rights reserved.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "story_location_label",
+    "value": "Location",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "story_notes_label",
+    "value": "Field notes",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "story_cta",
+    "value": "Commission a similar story",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "story_documentary_label",
+    "value": "Documentary",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "story_photo_label",
+    "value": "Photo essay",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "company_name",
+    "value": "Origin 13 Communication PLC",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "company_short",
+    "value": "Origin 13",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "company_domain",
+    "value": "www.origin13communication.com",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "company_email",
+    "value": "info@origin13communication.com",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "company_phone",
+    "value": "+251 9 58 38 78 38",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "company_phoneHref",
+    "value": "tel:+251958387838",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "company_address",
+    "value": "22, Rebka Bldg, 2nd Floor, Office no. 202",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "company_location",
+    "value": "Addis Ababa, Ethiopia",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "company_hours",
+    "value": "Monday – Friday, 8:30 AM – 5:30 PM (EAT)",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "company_years",
+    "value": "12+",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "company_region",
+    "value": "East Africa & Pan-African Engagements",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "nav_0_label",
+    "value": "Home",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "nav_1_label",
+    "value": "About",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "nav_2_label",
+    "value": "Services",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "nav_3_label",
+    "value": "Portfolio",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "nav_4_label",
+    "value": "Contact",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_typeface_label",
+    "value": "Typeface",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "portfolio_typeface_alphabet",
+    "value": "Aa Bb Cc Dd Ee Ff Gg 0123456789",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "site_logo",
+    "value": "",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "home_pillars_image",
+    "value": "/assets/hosted/crew.jpg",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "pillar_0_title",
+    "value": "Local knowledge",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "pillar_0_body",
+    "value": "We know the places and communities we work in. We take time to listen and understand before we film.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "pillar_1_title",
+    "value": "Quality work",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "pillar_1_body",
+    "value": "We use professional cameras, lighting and sound equipment to make films and photographs ready for TV, events and online use.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "pillar_2_title",
+    "value": "Respect for people",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "pillar_2_body",
+    "value": "We ask permission, protect people's privacy and take care when working with sensitive stories.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "process_0_step",
+    "value": "01",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "process_0_title",
+    "value": "Listen",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "process_0_body",
+    "value": "Tell us your goals, your audience and what you need.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "process_1_step",
+    "value": "02",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "process_1_title",
+    "value": "Plan",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "process_1_body",
+    "value": "We agree on the approach, schedule and budget.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "process_2_step",
+    "value": "03",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "process_2_title",
+    "value": "Create",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "process_2_body",
+    "value": "Our team films, photographs, designs or runs your campaign.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "process_3_step",
+    "value": "04",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "process_3_title",
+    "value": "Deliver",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "process_3_body",
+    "value": "We review the work with you and prepare the final files.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_documentary_number",
+    "value": "01",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_documentary_title",
+    "value": "Documentary Films & Photography",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_documentary_summary",
+    "value": "We film real stories and take photographs that show your work and the people behind it.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_documentary_details",
+    "value": "Short and long documentaries\nFilms about project results and field evaluations\n4K and 8K filming equipment\nEditorial photography and photo essays",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_documentary_image",
+    "value": "/assets/hosted/crew.jpg",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_events_number",
+    "value": "02",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_events_title",
+    "value": "Live Event Coverage & Broadcasting",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_events_summary",
+    "value": "We record and stream your events so people can take part from anywhere.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_events_details",
+    "value": "Multi-camera live streaming and switching\nConference and summit coverage\nAudio and video recording of talks and panels\nQuick highlight videos for social media",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_events_image",
+    "value": "/assets/hosted/slide-4.jpg",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_branding_number",
+    "value": "03",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_branding_title",
+    "value": "Brand Design & Visual Identity",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_branding_summary",
+    "value": "We give your organization a clear, consistent look, in print and online.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_branding_details",
+    "value": "Logos, brand guidelines and visual identity\nPublications and annual reports\nDesigns for websites, social media and print\nExhibition design and gallery planning",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_branding_image",
+    "value": "/assets/hosted/abbro-packaging-mockup.webp",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_digital_number",
+    "value": "04",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_digital_title",
+    "value": "Digital Marketing & Campaigns",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_digital_summary",
+    "value": "We help you reach the right people, share your message and track what works.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_digital_details",
+    "value": "Social media campaigns and account management\nTargeted paid online advertising\nContent planning and results tracking\nCommunity growth and public outreach",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_digital_image",
+    "value": "/assets/hosted/slide-4.jpg",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_communications_number",
+    "value": "05",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_communications_title",
+    "value": "Strategic Communications & Creative Direction",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_communications_summary",
+    "value": "We turn your goals into clear messages and guide the creative work from start to finish.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_communications_details",
+    "value": "Creative ideas and project plans\nVisual direction for advocacy campaigns\nRecording and sharing organizational knowledge\nColor grading and sound design",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "service_communications_image",
+    "value": "/assets/hosted/crew.jpg",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_gfn-seedlings_title",
+    "value": "Misting the Highland Seedlings",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_gfn-seedlings_subtitle",
+    "value": "Nursery propagation and community food security",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_gfn-seedlings_location",
+    "value": "Highland Greenhouses, Ethiopia",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_gfn-seedlings_partner",
+    "value": "Global Food Banking Network",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_gfn-seedlings_category",
+    "value": "stills",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_gfn-seedlings_image",
+    "value": "/assets/hosted/slide-1.jpg",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_gfn-seedlings_synopsis",
+    "value": "Inside community-managed highland greenhouses, a worker sprays a fine mist across nursery beds as others carry trays of young seedlings. Origin 13 documented this vital chain of food security and smallholder climate resilience for the Global Food Banking Network.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_gfn-seedlings_fieldNotes",
+    "value": "Captured on prime cinema optics in morning mist and diffused skylight. No staging — only the quiet cadence of agricultural stewardship.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_gfn-seedlings_quote",
+    "value": "Food sovereignty begins in the quiet dedication of the nursery. Honoring the people who nurture life from soil requires unhurried observation.",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_africa-cdc-lab_title",
+    "value": "The Cold Chain Sentinel",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_africa-cdc-lab_subtitle",
+    "value": "Continental genomic surveillance and African scientific leadership",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_africa-cdc-lab_location",
+    "value": "Addis Ababa, Ethiopia",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_africa-cdc-lab_partner",
+    "value": "Africa CDC",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_africa-cdc-lab_category",
+    "value": "documentary",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_africa-cdc-lab_image",
+    "value": "/assets/hosted/slide-2.jpg",
+    "updated_at": "2026-10-26T12:35:46.106+00:00"
+  },
+  {
+    "key": "featured_africa-cdc-lab_synopsis",
+    "value": "Inside the laboratories powering continental disease surveillance, African scientists and technicians maintain the standards that protect millions. A film that shifts the narrative from vulnerability to leadership.",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_africa-cdc-lab_fieldNotes",
+    "value": "Filmed inside high-containment laboratories with sterile optical housings and minimal-footprint cinema kits.",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_africa-cdc-lab_quote",
+    "value": "Visual evidence that shifts the narrative from vulnerability to African scientific leadership.",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_under-the-net_title",
+    "value": "Under the Net",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_under-the-net_subtitle",
+    "value": "Malaria prevention and the dignity of the household",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_under-the-net_location",
+    "value": "Rural Ethiopia",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_under-the-net_partner",
+    "value": "Community Health Programs",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_under-the-net_category",
+    "value": "stills",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_under-the-net_image",
+    "value": "/assets/hosted/slide-3.jpg",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_under-the-net_synopsis",
+    "value": "A single shaft of light, a mosquito net raised at dusk. A quiet study of the everyday rituals that stand between families and preventable disease.",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_under-the-net_fieldNotes",
+    "value": "Available light only. Shot with a fast prime to preserve the darkness of the room and the privacy of the subject.",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_under-the-net_quote",
+    "value": "Health diplomacy succeeds when evidence centers the household, not the statistic.",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_field-visit_title",
+    "value": "Ground Truth",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_field-visit_subtitle",
+    "value": "Field verification with frontline health and agriculture teams",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_field-visit_location",
+    "value": "Ethiopia",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_field-visit_partner",
+    "value": "Institutional Partners",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_field-visit_category",
+    "value": "documentary",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_field-visit_image",
+    "value": "/assets/hosted/slide-4.jpg",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_field-visit_synopsis",
+    "value": "Program teams walk the ground with the people who run it every day. Origin 13 documents site visits so decision-makers far away can see what is really happening.",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "featured_field-visit_fieldNotes",
+    "value": "Run-and-gun coverage with a two-person crew and wireless lavaliers for natural conversation.",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_0_name",
+    "value": "International Center for Transitional Justice",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_0_short",
+    "value": "ICTJ",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_0_logo",
+    "value": "/assets/hosted/logo-ictj.png",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_0_type",
+    "value": "Human Rights & Rule of Law",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_1_name",
+    "value": "Africa Centres for Disease Control and Prevention",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_1_short",
+    "value": "Africa CDC",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_1_logo",
+    "value": "/assets/hosted/logo-africacdc.png",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_1_type",
+    "value": "Public Health",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_2_name",
+    "value": "Global Food Banking Network",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_2_short",
+    "value": "GFN",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_2_logo",
+    "value": "/assets/hosted/partner-gfn-transparent.png",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_2_type",
+    "value": "Food Security",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_3_name",
+    "value": "Women in Health Education and Rights",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_3_short",
+    "value": "WI HER",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_3_logo",
+    "value": "/assets/hosted/logo-wiher.png",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_3_type",
+    "value": "Gender & Health",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_4_name",
+    "value": "Life and Peace Institute",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_4_short",
+    "value": "LPI",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_4_logo",
+    "value": "/assets/hosted/logo-lpi.png",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_4_type",
+    "value": "Peacebuilding",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_5_name",
+    "value": "Stockholm Environment Institute",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_5_short",
+    "value": "SEI",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_5_logo",
+    "value": "/assets/hosted/sei-logo.png",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_5_type",
+    "value": "Environment & Sustainability",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_6_name",
+    "value": "Italian Trade Agency",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_6_short",
+    "value": "ITA",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_6_logo",
+    "value": "/assets/hosted/partner-ita-transparent.png",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_6_type",
+    "value": "Trade & Investment",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_7_name",
+    "value": "European & Developing Countries Clinical Trials Partnership",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_7_short",
+    "value": "EDCTP",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_7_logo",
+    "value": "/assets/hosted/partner-edctp-transparent.png",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_7_type",
+    "value": "Health Research",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_8_name",
+    "value": "Vital Strategies",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_8_short",
+    "value": "VS",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_8_logo",
+    "value": "/assets/hosted/partner-vital-transparent.png",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_8_type",
+    "value": "Public Health",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_9_name",
+    "value": "Resilient Cities Network",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_9_short",
+    "value": "RCN",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_9_logo",
+    "value": "/assets/hosted/partner-rcn-transparent.png",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "partner_9_type",
+    "value": "Urban Resilience",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-doc-1_image",
+    "value": "/assets/hosted/slide-1.jpg",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-doc-2_image",
+    "value": "",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-doc-3_image",
+    "value": "/assets/hosted/slide-3.jpg",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-evt-1_image",
+    "value": "",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-evt-2_image",
+    "value": "/assets/hosted/work-event.jpg",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-evt-3_image",
+    "value": "/assets/hosted/slide-4.jpg",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-kit_image",
+    "value": "/src/assets/abbro-overview-van.jpg?t=1793014282169",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-kit_chapter",
+    "value": "01 — Overview",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-challenge_image",
+    "value": "/assets/hosted/abbro-shopping-mockup.webp",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-challenge_chapter",
+    "value": "02 — The Challenge",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-solution_image",
+    "value": "/assets/hosted/abbro-brand-kit-mockup-refined.webp",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-solution_chapter",
+    "value": "03 — The Solution",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-palette_image",
+    "value": "",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-palette_chapter",
+    "value": "04 — The Visual Language",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-palette_board",
+    "value": "{\n  \"type\": \"palette\",\n  \"colors\": [\n    {\n      \"name\": \"Signal Yellow\",\n      \"hex\": \"#F5E21B\",\n      \"role\": \"Primary · action\"\n    },\n    {\n      \"name\": \"Ink Black\",\n      \"hex\": \"#111111\",\n      \"role\": \"Text · contrast\"\n    },\n    {\n      \"name\": \"Paper White\",\n      \"hex\": \"#FAFAF7\",\n      \"role\": \"Space · calm\"\n    },\n    {\n      \"name\": \"Kraft\",\n      \"hex\": \"#C9A27A\",\n      \"role\": \"Packaging\"\n    }\n  ]\n}",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-type_image",
+    "value": "",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-type_chapter",
+    "value": "05 — Typography",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-type_board",
+    "value": "{\n  \"type\": \"type\",\n  \"display\": {\n    \"family\": \"Abbro\",\n    \"stack\": \"'Nunito', system-ui, sans-serif\",\n    \"weight\": 800,\n    \"sample\": \"abbro\",\n    \"image\": \"/src/assets/abbro-wordmark.svg\"\n  },\n  \"text\": {\n    \"family\": \"Nunito\",\n    \"stack\": \"'Nunito', system-ui, sans-serif\",\n    \"sample\": \"Order today, delivered tomorrow. Fresh finds from sellers across Addis Ababa.\"\n  },\n  \"ink\": \"#111111\",\n  \"paper\": \"#F5E21B\",\n  \"accent\": \"#111111\"\n}",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-pattern_image",
+    "value": "/assets/hosted/abbro-brand-kit-mockup-refined.webp",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-pattern_chapter",
+    "value": "06 — Brand Pattern",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-1_image",
+    "value": "/assets/hosted/abbro-packaging-mockup.webp",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-1_chapter",
+    "value": "07 — Applications",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-2_image",
+    "value": "/assets/hosted/abbro-shopping-mockup.webp",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-brd-2_chapter",
+    "value": "08 — Digital Experience",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-kit_image",
+    "value": "/src/assets/macha-overview-wedding.jpg?t=1793014445639",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-kit_chapter",
+    "value": "01 — Overview",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-challenge_image",
+    "value": "/assets/hosted/macha-album-mockup.webp",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-challenge_chapter",
+    "value": "02 — The Challenge",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-solution_image",
+    "value": "/assets/hosted/macha-brand-kit-mockup.webp",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-solution_chapter",
+    "value": "03 — The Solution",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-palette_image",
+    "value": "",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-palette_chapter",
+    "value": "04 — The Visual Language",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-palette_board",
+    "value": "{\n  \"type\": \"palette\",\n  \"colors\": [\n    {\n      \"name\": \"Ivory\",\n      \"hex\": \"#F3EFE4\",\n      \"role\": \"Primary · paper\"\n    },\n    {\n      \"name\": \"Charcoal\",\n      \"hex\": \"#2B2B2B\",\n      \"role\": \"Text · contrast\"\n    },\n    {\n      \"name\": \"Linen\",\n      \"hex\": \"#E3DCCB\",\n      \"role\": \"Texture\"\n    },\n    {\n      \"name\": \"Stone\",\n      \"hex\": \"#9C978C\",\n      \"role\": \"Details\"\n    }\n  ]\n}",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-type_image",
+    "value": "",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-type_chapter",
+    "value": "05 — Typography",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-type_board",
+    "value": "{\n  \"type\": \"type\",\n  \"display\": {\n    \"family\": \"Montserrat\",\n    \"stack\": \"'Montserrat', system-ui, sans-serif\",\n    \"weight\": 600,\n    \"sample\": \"MACHA\"\n  },\n  \"text\": {\n    \"family\": \"Montserrat\",\n    \"stack\": \"'Montserrat', system-ui, sans-serif\",\n    \"sample\": \"Every wedding has a story. We are there to witness it, not to direct it.\"\n  },\n  \"ink\": \"#F3EFE4\",\n  \"paper\": \"#2B2B2B\",\n  \"accent\": \"#9C978C\"\n}",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-album_image",
+    "value": "/assets/hosted/macha-album-mockup.webp",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-album_chapter",
+    "value": "06 — Applications",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-screen_image",
+    "value": "/assets/hosted/macha-screen-mockup.webp",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-macha-screen_chapter",
+    "value": "07 — Digital Experience",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-dig-1_image",
+    "value": "/assets/hosted/work-digital.jpg",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-dig-2_image",
+    "value": "",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-com-1_image",
+    "value": "/assets/hosted/crew.jpg",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "portfolio_work_w-com-2_image",
+    "value": "/assets/hosted/elders.jpg",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  },
+  {
+    "key": "contact_intro",
+    "value": "Need a film, event coverage, a new brand or a campaign? Tell us about your project.",
+    "updated_at": "2026-10-26T12:35:46.107+00:00"
+  }
+]

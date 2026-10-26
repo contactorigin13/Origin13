@@ -1,0 +1,11 @@
+ALTER TABLE public.projects ADD COLUMN published boolean NOT NULL DEFAULT false;
+DROP POLICY "Anyone can read projects" ON public.projects;
+CREATE POLICY "Published projects are public" ON public.projects FOR SELECT TO anon, authenticated USING (published);
+CREATE POLICY "Admins read unpublished projects" ON public.projects FOR SELECT TO authenticated USING (public.is_admin());
+CREATE TABLE public.site_visibility (key text PRIMARY KEY, published boolean NOT NULL DEFAULT true, updated_at timestamptz NOT NULL DEFAULT now());
+GRANT SELECT ON public.site_visibility TO anon;
+GRANT SELECT, INSERT, UPDATE, DELETE ON public.site_visibility TO authenticated;
+GRANT ALL ON public.site_visibility TO service_role;
+ALTER TABLE public.site_visibility ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Public visibility settings" ON public.site_visibility FOR SELECT TO anon, authenticated USING (true);
+CREATE POLICY "Admins manage visibility" ON public.site_visibility FOR ALL TO authenticated USING (public.is_admin()) WITH CHECK (public.is_admin());

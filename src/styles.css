@@ -1,0 +1,329 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-paper: var(--paper);
+  --color-paper-foreground: var(--paper-foreground);
+  --color-scrim: var(--scrim);
+}
+
+:root {
+  color-scheme: dark;
+  --radius: 0.25rem;
+  /* Company palette: black, white and Origin 13 blue (oklch(0.6228 0.1149 228.49)) only */
+  --background: oklch(0.14 0 0);
+  --foreground: oklch(0.99 0 0);
+  --card: oklch(0.18 0 0);
+  --card-foreground: oklch(0.99 0 0);
+  --popover: oklch(0.18 0 0);
+  --popover-foreground: oklch(0.99 0 0);
+  --primary: oklch(0.6228 0.1149 228.49);
+  --primary-foreground: oklch(0.14 0 0);
+  --secondary: oklch(0.22 0 0);
+  --secondary-foreground: oklch(0.99 0 0);
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.99 0 0 / 62%);
+  --accent: oklch(0.24 0 0);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.6228 0.1149 228.49);
+  --destructive-foreground: oklch(0.14 0 0);
+  --border: oklch(0.99 0 0 / 12%);
+  --input: oklch(0.99 0 0 / 18%);
+  --ring: oklch(0.6228 0.1149 228.49);
+  --paper: oklch(1 0 0);
+  --paper-foreground: oklch(0.14 0 0);
+  --scrim: oklch(0.05 0 0);
+  --gradient-header: linear-gradient(180deg, oklch(0.03 0 0 / 0.9), oklch(0.03 0 0 / 0.6));
+
+  --gradient-hero: linear-gradient(180deg, oklch(0.03 0 0 / 0.55) 0%, oklch(0.03 0 0 / 0.15) 40%, oklch(0.03 0 0 / 0.95) 100%);
+  --gradient-card: linear-gradient(180deg, transparent 35%, oklch(0.03 0 0 / 0.92) 100%);
+  --shadow-elegant: 0 30px 60px -20px oklch(0 0 0 / 0.7);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.14 0 0);
+  --card: oklch(0.97 0 0);
+  --card-foreground: oklch(0.14 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.14 0 0);
+  --secondary: oklch(0.94 0 0);
+  --secondary-foreground: oklch(0.14 0 0);
+  --muted: oklch(0.94 0 0);
+  --muted-foreground: oklch(0.42 0 0);
+  --accent: oklch(0.92 0 0);
+  --accent-foreground: oklch(0.14 0 0);
+  --border: oklch(0.14 0 0 / 15%);
+  --input: oklch(0.14 0 0 / 24%);
+  --shadow-elegant: 0 18px 40px -20px oklch(0 0 0 / 0.22);
+}
+
+/* Photos and the dark navigation retain readable white text in either mode. */
+.media-tone {
+  --background: oklch(0.14 0 0);
+  --foreground: oklch(0.99 0 0);
+  --muted-foreground: oklch(0.99 0 0 / 62%);
+  --accent: oklch(0.24 0 0);
+  --accent-foreground: oklch(0.99 0 0);
+  --border: oklch(0.99 0 0 / 12%);
+  color: var(--foreground);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+@utility bg-hero-scrim {
+  background: var(--gradient-hero);
+}
+
+@utility bg-header-scrim {
+  background: var(--gradient-header);
+}
+
+.site-header { --logo-mark: var(--primary); }
+/* Light mode: the whole logo turns white over the dark header. */
+:root[data-theme="light"] .site-header { --logo-mark: oklch(0.99 0 0); }
+.site-logo svg { width: 100%; height: 100%; }
+.site-logo path { transition: fill 450ms ease; }
+.menu-title { position: relative; display: block; overflow: hidden; line-height: 1.5; }
+.menu-title-current, .menu-title-next {
+  display: block;
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), color 450ms ease;
+}
+.menu-title-next { position: absolute; inset: 0; transform: translateY(110%); color: var(--primary); }
+.menu-contact .menu-title-next { color: var(--primary-foreground); }
+.menu-link:focus-visible .menu-title-current { transform: translateY(-110%); }
+.menu-link:focus-visible .menu-title-next { transform: translateY(0); }
+@media (hover: hover) and (pointer: fine) {
+  .menu-link:hover .menu-title-current { transform: translateY(-110%); }
+  .menu-link:hover .menu-title-next { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-title-current, .menu-title-next { transition: none; }
+}
+.partner-marquee:hover { animation-play-state: paused; }
+/* Keep the full-bleed photo, but let copy grow below the fixed header. */
+@media (min-width: 768px) and (max-height: 760px) {
+  .home-hero-title { font-size: 4rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-logo path { transition: none; }
+}
+
+@utility bg-card-scrim {
+  background: var(--gradient-card);
+}
+
+@utility shadow-elegant {
+  box-shadow: var(--shadow-elegant);
+}
+
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.12); }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@utility animate-kenburns {
+  animation: kenburns 12s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-origin: 50% 50%;
+}
+@utility animate-rise {
+  animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+@utility animate-progress {
+  animation: progress 7s linear forwards;
+  transform-origin: left;
+}
+
+@keyframes filmstrip {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+
+/* Animated placeholder that stands in for a video clip (like a GIF). */
+@utility video-placeholder {
+  background: linear-gradient(115deg, var(--scrim) 0%, var(--accent) 30%, var(--primary) 50%, var(--accent) 70%, var(--scrim) 100%);
+  background-size: 300% 300%;
+  animation: filmstrip 8s ease-in-out infinite alternate;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.team-portrait-image {
+  transform: translate3d(0, 0, 0) scale(1);
+  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.portrait-viewfinder {
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 350ms ease, transform 550ms ease;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .team-portrait:hover .team-portrait-image {
+    transform: translate3d(var(--portrait-x, 0px), var(--portrait-y, 0px), 0) scale(1.07);
+  }
+  .team-portrait:hover .portrait-viewfinder {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-portrait-image, .portrait-viewfinder { transition: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .animate-kenburns, .animate-marquee { animation: none; }
+}
+
+/* Portfolio: outlined chapter numbers, live dot and film frame details. */
+.text-outline { color: transparent; -webkit-text-stroke: 1px var(--foreground); }
+.group:hover .text-outline, .text-outline.is-active { color: var(--primary); -webkit-text-stroke-color: var(--primary); }
+.text-outline { transition: color 500ms ease, -webkit-text-stroke-color 500ms ease; }
+@keyframes live-pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.7); } }
+.live-dot { animation: live-pulse 1.4s ease-in-out infinite; }
+.film-frame::before, .film-frame::after { content: ""; position: absolute; left: 0; right: 0; height: 9%; background: var(--scrim); z-index: 1; transition: height 600ms cubic-bezier(0.16,1,0.3,1); }
+.film-frame::before { top: 0; } .film-frame::after { bottom: 0; }
+.group:hover .film-frame::before, .group:hover .film-frame::after { height: 0; }
+/* Service index: the glyph is the pointer, so the system cursor is hidden over each row. */
+.cursor-preview { transition: opacity 90ms linear; will-change: transform, opacity; }
+.cursor-preview .glyph-pop { opacity: 0; transform: scale(0.82) rotate(-4deg); transition: opacity 70ms linear, transform 120ms cubic-bezier(0.22, 1, 0.36, 1); will-change: opacity, transform; }
+.cursor-preview .glyph-pop.is-on { opacity: 1; transform: scale(1) rotate(0deg); }
+@media (hover: hover) and (pointer: fine) { .service-row { cursor: none; } }
+@media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } .cursor-preview .glyph-pop { transform: none; transition: opacity 70ms linear; } }
+
+/* Header exit: the pieces leave in a wave, the bar follows, and a slim blue
+   line stays behind tracking how far the page has been read. */
+.header-item {
+  transition:
+    opacity 300ms ease,
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 450ms ease,
+    color 450ms ease;
+}
+.site-header.is-collapsed .header-item {
+  opacity: 0;
+  transform: translateY(-16px);
+  transition-delay: var(--d, 0ms);
+}
+/* What the header leaves behind: a slim blue line pinned to the very top of
+   the viewport, filling as the page is read. It appears once you scroll past
+   the header and stays while the header is folded away. */
+.header-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+.header-progress.is-on { opacity: 1; }
+.header-progress-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  transition: transform 120ms linear;
+}
+@media (prefers-reduced-motion: reduce) { .header-progress { transition: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .header-item { transition: none; }
+}
