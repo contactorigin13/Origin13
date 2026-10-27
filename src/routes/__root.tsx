@@ -16,6 +16,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { warmCovers } from "@/lib/covers";
 
 function NotFoundComponent() {
   return (
@@ -124,6 +125,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useEffect(() => { void warmCovers(queryClient); }, [queryClient]);
 
   return (
     <QueryClientProvider client={queryClient}>
