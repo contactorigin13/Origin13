@@ -270,7 +270,9 @@
 @media (prefers-reduced-motion: reduce) {
   .team-portrait-image, .portrait-viewfinder { transition: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .animate-kenburns, .animate-marquee { animation: none; }
+  .animate-kenburns { animation: none; }
+  /* Partner logos keep drifting, only slower, so phones with "reduce motion" on still show every logo. */
+  .animate-marquee { animation-duration: 120s; }
 }
 
 /* Portfolio: outlined chapter numbers, live dot and film frame details. */
