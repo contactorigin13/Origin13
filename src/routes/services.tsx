@@ -66,12 +66,6 @@ function Services() {
             return (
               <Reveal key={s.id} className={i === services.length - 1 ? "md:col-span-2" : ""}>
                 <article id={s.id} className="h-full scroll-mt-28 rounded-lg border border-border bg-card p-7 md:p-10">
-                  {s.id === "branding" && (
-                    <figure className="mb-8">
-                      <img src={s.image} alt="Abbro brand concept with yellow delivery boxes, tissue and a black shopping bag" loading="lazy" className="aspect-[4/3] w-full rounded-sm object-cover" />
-                      <figcaption className="mt-3 text-xs text-muted-foreground"><SiteText name="services_brand_caption">Abbro · Packaging mockup concept · Addis Ababa</SiteText></figcaption>
-                    </figure>
-                  )}
                   <div className="mb-8 flex items-center justify-between">
                     <Icon className="h-7 w-7 text-primary" strokeWidth={1.5} aria-hidden="true" />
                     <span className="font-display text-3xl text-muted-foreground/60">{s.number}</span>
