@@ -67,14 +67,14 @@ function Hero() {
         </div>
 
         <div className="mt-8 flex items-center justify-between gap-6 border-t border-border pt-6">
-          <div className="flex flex-1 gap-3">
+          <div className="flex min-w-0 flex-1 gap-3">
             {slides.map((f, idx) => (
-              <button key={f.id} onClick={() => setI(idx)} className="group flex-1 text-left" aria-label={`Show ${f.tag}`}>
+              <button key={f.id} onClick={() => setI(idx)} className="group min-w-0 flex-1 text-left" aria-label={`Show ${f.tag}`}>
                 <span className="relative block h-px w-full overflow-hidden bg-foreground/20">
                   {idx === i && <span key={i} className="absolute inset-0 bg-primary animate-progress" />}
                   {idx < i && <span className="absolute inset-0 bg-foreground/60" />}
                 </span>
-                <span className={cn("mt-3 hidden text-xs font-medium transition-colors md:block", idx === i ? "text-foreground" : "text-muted-foreground group-hover:text-foreground")}>
+                <span className={cn("mt-3 hidden truncate text-xs font-medium transition-colors md:block", idx === i ? "text-foreground" : "text-muted-foreground group-hover:text-foreground")}>
                   0{idx + 1} — {f.tag}
                 </span>
               </button>
