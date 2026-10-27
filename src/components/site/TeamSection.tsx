@@ -25,7 +25,6 @@ export function TeamSection() {
             </Reveal>
           ))}
         </div>
-        {members.some((member) => member.temporary) && <p className="mt-8 text-xs text-muted-foreground"><SiteText name="about_portrait_note">Generated portraits are temporary, not actual team photos.</SiteText></p>}
       </div>
     </section>
   );
