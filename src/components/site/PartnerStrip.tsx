@@ -13,10 +13,10 @@ export function PartnerStrip() {
         <SiteText name="home_partners_label">Trusted by institutions shaping the continent</SiteText>
       </p>
       <div className="relative mt-10 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-        <ul className="partner-marquee flex w-max animate-marquee items-center gap-20 pr-20">
+        <ul className="partner-marquee flex w-max animate-marquee items-center gap-10 pr-10 md:gap-20 md:pr-20">
           {row.map((p, i) => (
-            <li key={i} className="flex h-16 w-44 shrink-0 items-center justify-center">
-              <img src={p.logo} alt={p.name} title={p.name} className="max-h-16 max-w-full object-contain grayscale transition-[filter] duration-500 hover:grayscale-0 motion-reduce:transition-none" loading="lazy" />
+            <li key={i} className="flex h-14 w-32 shrink-0 items-center justify-center md:h-16 md:w-44">
+              <img src={p.logo} alt={p.name} title={p.name} className="max-h-14 max-w-full md:max-h-16 object-contain grayscale transition-[filter] duration-500 hover:grayscale-0 motion-reduce:transition-none" loading="lazy" />
             </li>
           ))}
         </ul>
