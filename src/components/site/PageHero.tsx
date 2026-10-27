@@ -5,7 +5,7 @@ export function PageHero({ page, eyebrow, title, intro }: { page: CoverPage; eye
   const image = useCover(page);
   return (
     <section className="media-tone grain relative flex min-h-[78vh] items-end overflow-hidden">
-      <img key={image} src={image} alt="" className="absolute inset-0 h-full w-full object-cover animate-kenburns" />
+      {image && <img key={image} src={image} alt="" className="absolute inset-0 h-full w-full object-cover animate-kenburns" />}
       <div className="absolute inset-0 bg-hero-scrim" />
       <div className="relative mx-auto w-full max-w-7xl px-6 pb-20 pt-40 lg:px-10">
         <p className="eyebrow animate-rise">{eyebrow}</p>
