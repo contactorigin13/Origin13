@@ -2,7 +2,7 @@ import websiteMedia10 from "@/assets/crew.jpg.asset.json";
 import websiteMedia11 from "@/assets/danakil.jpg.asset.json";
 import websiteMedia13 from "@/assets/elders.jpg.asset.json";
 import websiteMedia17 from "@/assets/slide-3.jpg.asset.json";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, type QueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { BUCKET, isStoragePath } from "@/lib/projects";
 
@@ -39,11 +39,28 @@ export async function fetchCovers(): Promise<CoverMap> {
   return out;
 }
 
+const COVERS_STALE_MS = 30 * 60_000;
+
 export function useCovers() {
-  return useQuery({ queryKey: COVERS_QUERY_KEY, queryFn: fetchCovers, staleTime: 60_000 });
+  return useQuery({ queryKey: COVERS_QUERY_KEY, queryFn: fetchCovers, staleTime: COVERS_STALE_MS });
 }
 
+/** Cover URL for a page, or "" while the saved covers are still loading (so no placeholder flashes first). */
 export function useCover(page: CoverPage): string {
-  const { data } = useCovers();
-  return data?.[page].url ?? (COVERS.find((c) => c.page === page)?.fallback ?? "");
+  const { data, isError } = useCovers();
+  if (data) return data[page].url;
+  return isError ? (COVERS.find((c) => c.page === page)?.fallback ?? "") : "";
+}
+
+/** Load the saved covers and download the images in the background, so page heroes are ready before you navigate. */
+export async function warmCovers(qc: QueryClient): Promise<void> {
+  try {
+    const covers = await qc.fetchQuery({ queryKey: COVERS_QUERY_KEY, queryFn: fetchCovers, staleTime: COVERS_STALE_MS });
+    for (const c of COVERS) {
+      const img = new Image();
+      img.src = covers[c.page].url;
+    }
+  } catch {
+    /* the hero falls back to the built-in photo */
+  }
 }
