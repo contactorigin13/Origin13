@@ -160,7 +160,10 @@
 @media (prefers-reduced-motion: reduce) {
   .menu-title-current, .menu-title-next { transition: none; }
 }
-.partner-marquee:hover { animation-play-state: paused; }
+/* Pause on hover only for mouse users; on touch screens a tap leaves :hover stuck and froze the logos. */
+@media (hover: hover) and (pointer: fine) {
+  .partner-marquee:hover { animation-play-state: paused; }
+}
 /* Keep the full-bleed photo, but let copy grow below the fixed header. */
 @media (min-width: 768px) and (max-height: 760px) {
   .home-hero-title { font-size: 4rem; }
