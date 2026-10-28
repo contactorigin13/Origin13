@@ -8,7 +8,7 @@ import {
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, type ReactNode } from "react";
 
 import { Toaster } from "@/components/ui/sonner";
 import { Published, PublishedPage } from "@/components/site/Published";
@@ -17,6 +17,9 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { warmCovers } from "@/lib/covers";
+import { restoreQueryCache, startQueryCachePersistence } from "@/lib/cache-persist";
+
+const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 function NotFoundComponent() {
   return (
@@ -125,6 +128,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useIsoLayoutEffect(() => { restoreQueryCache(queryClient); return startQueryCachePersistence(queryClient); }, [queryClient]);
   useEffect(() => { void warmCovers(queryClient); }, [queryClient]);
 
   return (

@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { cachedSignedUrls } from "@/lib/signed-urls";
 import { BUCKET, isStoragePath } from "@/lib/projects";
 import { DEFAULT_TEAM, TEAM_CONTENT_KEY, parseTeam, placeholderPortrait, type TeamMember, type DisplayTeamMember } from "@/lib/team-data";
 
@@ -9,7 +10,7 @@ export async function resolveTeam(members: TeamMember[]): Promise<DisplayTeamMem
   const paths = members.filter((member) => isStoragePath(member.portrait)).map((member) => member.portrait.slice(8));
   const signed = new Map<string, string>();
   if (paths.length) {
-    const { data, error } = await supabase.storage.from(BUCKET).createSignedUrls(paths, 60 * 60 * 24 * 7);
+    const { data, error } = await cachedSignedUrls(BUCKET, paths, 60 * 60 * 24 * 7);
     if (error) throw error;
     for (const row of data ?? []) if (row.path && row.signedUrl) signed.set(row.path, row.signedUrl);
   }
@@ -34,7 +35,7 @@ export async function saveTeam(members: TeamMember[]): Promise<void> {
 }
 
 export function useTeam() {
-  return useQuery({ queryKey: TEAM_QUERY_KEY, queryFn: fetchTeam, staleTime: 60_000 });
+  return useQuery({ queryKey: TEAM_QUERY_KEY, queryFn: fetchTeam, staleTime: 10_000 });
 }
 
 export const FALLBACK_TEAM: DisplayTeamMember[] = DEFAULT_TEAM.map((member) => ({

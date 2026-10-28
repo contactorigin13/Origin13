@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { cachedSignedUrls } from "@/lib/signed-urls";
 import { HERO_SLIDES, STATS } from "@/data/studio";
 import { BUCKET, isStoragePath } from "@/lib/projects";
 
@@ -68,7 +69,7 @@ export async function fetchHomeSlides(): Promise<HomeSlide[]> {
   const paths = saved.flatMap((s) => s.image && isStoragePath(s.image) ? [s.image.slice(8)] : []);
   const signed = new Map<string, string>();
   if (paths.length) {
-    const { data: urls } = await supabase.storage.from(BUCKET).createSignedUrls(paths, 60 * 60 * 24 * 7);
+    const { data: urls } = await cachedSignedUrls(BUCKET, paths, 60 * 60 * 24 * 7);
     for (const u of urls ?? []) if (u.path && u.signedUrl) signed.set(u.path, u.signedUrl);
   }
   return slides.map((base) => {
@@ -90,7 +91,7 @@ export async function fetchHomeSlides(): Promise<HomeSlide[]> {
 }
 
 export function useHomeSlides() {
-  return useQuery({ queryKey: HOME_SLIDES_QUERY_KEY, queryFn: fetchHomeSlides, staleTime: 60_000 });
+  return useQuery({ queryKey: HOME_SLIDES_QUERY_KEY, queryFn: fetchHomeSlides, staleTime: 10_000 });
 }
 
 export async function fetchHomeStats(): Promise<HomeStat[]> {
@@ -102,5 +103,5 @@ export async function fetchHomeStats(): Promise<HomeStat[]> {
 }
 
 export function useHomeStats() {
-  return useQuery({ queryKey: HOME_STATS_QUERY_KEY, queryFn: fetchHomeStats, staleTime: 60_000 });
+  return useQuery({ queryKey: HOME_STATS_QUERY_KEY, queryFn: fetchHomeStats, staleTime: 10_000 });
 }

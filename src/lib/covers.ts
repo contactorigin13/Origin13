@@ -4,6 +4,7 @@ import websiteMedia13 from "@/assets/elders.jpg.asset.json";
 import websiteMedia17 from "@/assets/slide-3.jpg.asset.json";
 import { useQuery, type QueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { cachedSignedUrls } from "@/lib/signed-urls";
 import { BUCKET, isStoragePath } from "@/lib/projects";
 
 /** Page cover photos. Saved in the content table as "storage:<path>" under cover_<page>. */
@@ -27,7 +28,7 @@ export async function fetchCovers(): Promise<CoverMap> {
   const paths = [...stored.values()].filter(isStoragePath).map((v) => v.slice(8));
   const signed = new Map<string, string>();
   if (paths.length) {
-    const { data: urls } = await supabase.storage.from(BUCKET).createSignedUrls(paths, 60 * 60 * 24 * 7);
+    const { data: urls } = await cachedSignedUrls(BUCKET, paths, 60 * 60 * 24 * 7);
     for (const u of urls ?? []) if (u.path && u.signedUrl) signed.set(u.path, u.signedUrl);
   }
   const out = {} as CoverMap;
@@ -39,7 +40,7 @@ export async function fetchCovers(): Promise<CoverMap> {
   return out;
 }
 
-const COVERS_STALE_MS = 30 * 60_000;
+const COVERS_STALE_MS = 10_000;
 
 export function useCovers() {
   return useQuery({ queryKey: COVERS_QUERY_KEY, queryFn: fetchCovers, staleTime: COVERS_STALE_MS });

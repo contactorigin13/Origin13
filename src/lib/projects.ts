@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { cachedSignedUrls } from "@/lib/signed-urls";
 
 export const BUCKET = "portfolio-assets";
 
@@ -57,7 +58,7 @@ export async function fetchProjects(includeUnpublished = false): Promise<Project
   const paths = [...rows.map((r) => r.media_url), ...rows.flatMap((r) => r.slides.map((sl) => sl.media_url))].filter(isStoragePath).map((u) => u.slice(8));
   const signed = new Map<string, string>();
   if (paths.length) {
-    const { data: urls } = await supabase.storage.from(BUCKET).createSignedUrls(paths, 60 * 60 * 24 * 7);
+    const { data: urls } = await cachedSignedUrls(BUCKET, paths, 60 * 60 * 24 * 7);
     for (const s of urls ?? []) if (s.path && s.signedUrl) signed.set(s.path, s.signedUrl);
   }
   const show = (u: string) => (isStoragePath(u) ? signed.get(u.slice(8)) ?? "" : u);
@@ -75,5 +76,5 @@ export async function fetchProjects(includeUnpublished = false): Promise<Project
 }
 
 export function useProjects() {
-  return useQuery({ queryKey: ["projects"], queryFn: () => fetchProjects(), staleTime: 60_000 });
+  return useQuery({ queryKey: ["projects"], queryFn: () => fetchProjects(), staleTime: 15_000 });
 }
