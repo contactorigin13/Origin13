@@ -5,12 +5,11 @@ import { isPublished } from "@/lib/publication";
 import { Published } from "@/components/site/Published";
 import { SiteText } from "@/components/site/SiteText";
 import { useSiteContent } from "@/lib/site-content";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Camera, Radio, Palette, Megaphone, MessageSquare, Check } from "lucide-react";
 import { PROCESS, SERVICES } from "@/data/studio";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
-import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/services")({
   loader: () => getPageMetadata({ data: { page: "services" } }),
@@ -107,19 +106,6 @@ function Services() {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-      </Published>
-      <Published name="services_cta">
-      <section className="bg-paper text-paper-foreground">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-16 md:flex-row md:items-center lg:px-10">
-          <div>
-            <h2 className="text-4xl"><SiteText name="services_cta_title">Have a project in mind?</SiteText></h2>
-            <p className="mt-4 text-paper-foreground/70"><SiteText name="services_cta_body">Tell us what you need. Let’s make it happen.</SiteText></p>
-          </div>
-          <Button asChild size="lg" className="h-12 shrink-0">
-            <Link to="/contact"><SiteText name="services_cta_button">Let’s talk</SiteText> <ArrowUpRight /></Link>
-          </Button>
         </div>
       </section>
       </Published>
