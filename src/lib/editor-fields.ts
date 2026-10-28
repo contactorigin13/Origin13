@@ -21,7 +21,7 @@ export const EXTRA_CONTENT_FIELDS: EditorField[] = [
   field("portfolio_typeface_alphabet", "Portfolio — Typeface alphabet sample", "Aa Bb Cc Dd Ee Ff Gg 0123456789"),
   field('site_logo', 'Shared — Website logo', '', false, true),
   field('home_pillars_image', 'Home — How we work photo', SERVICES[0]?.image ?? '', false, true),
-  ...PILLARS.flatMap((p, i) => [field(`pillar_${i}_title`, `Shared — Principle ${i + 1} — title`, p.title), field(`pillar_${i}_body`, `Shared — Principle ${i + 1} — text`, p.body, true)]),
+  ...PILLARS.flatMap((p, i) => [field(`pillar_${i}_title`, `About — Principle ${i + 1} — title (also shown on Home)`, p.title), field(`pillar_${i}_body`, `About — Principle ${i + 1} — text (also shown on Home)`, p.body, true)]),
   ...PROCESS.flatMap((p, i) => Object.entries(p).map(([key, value]) => field(`process_${i}_${key}`, `Services — Process ${i + 1} — ${key}`, value, key === 'body'))),
   ...SERVICES.flatMap(s => [field(`service_${s.id}_number`, `Services — ${s.title} — number`, s.number), field(`service_${s.id}_title`, `Services — ${s.title} — title`, s.title), field(`service_${s.id}_summary`, `Services — ${s.title} — description`, s.summary, true), field(`service_${s.id}_details`, `Services — ${s.title} — offerings (one per line)`, s.details.join('\n'), true), field(`service_${s.id}_image`, `Services — ${s.title} — image`, s.image, false, true)]),
   ...FEATURED.flatMap(s => Object.entries(s).filter(([key]) => key !== 'id').map(([key, value]) => field(`featured_${s.id}_${key}`, `Home — ${s.title} — ${key}`, value ?? '', ['synopsis','fieldNotes','quote','subtitle'].includes(key), key === 'image'))),
