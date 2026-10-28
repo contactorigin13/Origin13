@@ -267,8 +267,51 @@
   }
 }
 
+/* Team portraits: charcoal + brand-blue duotone at rest, full natural colour on hover. */
+.team-portrait-image {
+  filter: grayscale(1) contrast(1.2) brightness(0.92);
+  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms ease;
+}
+.team-portrait-tint {
+  background: var(--primary);
+  mix-blend-mode: color;
+  opacity: 0.6;
+  transition: opacity 700ms ease;
+}
+.team-portrait-shade {
+  background: linear-gradient(to top, oklch(0.14 0 0 / 0.55), transparent 55%);
+  transition: opacity 700ms ease;
+}
+.team-portrait { transition: box-shadow 600ms ease; }
+.team-caption::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  height: 2px;
+  width: 100%;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.team-name, .team-role { transition: color 400ms ease, text-shadow 500ms ease, border-color 400ms ease, padding 400ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .team-card:hover .team-portrait-image { filter: none; }
+  .team-card:hover .team-portrait-tint, .team-card:hover .team-portrait-shade { opacity: 0; }
+  .team-card:hover .team-portrait { box-shadow: 0 0 0 1px var(--primary), 0 18px 60px -18px color-mix(in oklab, var(--primary) 70%, transparent); }
+  .team-card:hover .team-caption::before { transform: scaleX(1); }
+  .team-card:hover .team-name { text-shadow: 0 0 26px color-mix(in oklab, var(--primary) 55%, transparent); }
+  .team-card:hover .team-role { border-left-color: var(--primary); padding-left: 0.75rem; color: var(--foreground); }
+}
+/* Touch screens: press and hold a portrait to see it in colour. */
+@media (hover: none) {
+  .team-card:active .team-portrait-image { filter: none; }
+  .team-card:active .team-portrait-tint, .team-card:active .team-portrait-shade { opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .team-portrait-image, .portrait-viewfinder { transition: none; }
+  .team-portrait-image, .portrait-viewfinder, .team-portrait-tint, .team-portrait-shade, .team-caption::before, .team-name, .team-role { transition: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .animate-kenburns { animation: none; }
   /* Partner logos keep drifting, only slower, so phones with "reduce motion" on still show every logo. */

@@ -17,10 +17,12 @@ export function TeamSection() {
         <div className="mt-14 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {members.map((member, index) => (
             <Reveal key={member.id} delay={index * 80}>
-              <TeamPortrait member={member} />
-              <div className="mt-6 border-t border-border pt-5">
-                <h3 className="text-2xl leading-tight">{member.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{member.role}</p>
+              <div className="team-card">
+                <TeamPortrait member={member} />
+                <div className="team-caption relative mt-6 border-t border-border pt-5">
+                  <h3 className="team-name text-2xl leading-tight">{member.name}</h3>
+                  <p className="team-role mt-3 inline-block border-l-2 border-transparent text-sm leading-relaxed text-muted-foreground">{member.role}</p>
+                </div>
               </div>
             </Reveal>
           ))}
