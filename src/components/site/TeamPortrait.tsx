@@ -20,7 +20,6 @@ export function TeamPortrait({ member }: { member: DisplayTeamMember }) {
       {member.display_url ? (
         <>
           <img src={member.display_url} alt={member.temporary ? `Temporary portrait for ${member.name}` : member.name} width={768} height={1024} loading="lazy" className="team-portrait-image h-full w-full object-cover" />
-          <span aria-hidden="true" className="team-portrait-tint pointer-events-none absolute inset-0" />
           <span aria-hidden="true" className="team-portrait-shade pointer-events-none absolute inset-0" />
           <span aria-hidden="true" className="portrait-viewfinder pointer-events-none absolute inset-5">
             <span className="absolute left-0 top-0 h-5 w-5 border-l-2 border-t-2 border-primary" />
