@@ -18,6 +18,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { warmCovers } from "@/lib/covers";
 import { restoreQueryCache, startQueryCachePersistence } from "@/lib/cache-persist";
+import { loadSiteSnapshot, seedQueryClient } from "@/lib/site-snapshot";
 
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
@@ -106,6 +107,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
   }),
+  // Load the saved content on the server so the first page arrives complete (no "Loading…", no flash of old content).
+  loader: (ctx) => loadSiteSnapshot((ctx as { location?: { pathname?: string } }).location?.pathname),
+  staleTime: Infinity,
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -128,6 +132,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  seedQueryClient(queryClient, Route.useLoaderData());
   useIsoLayoutEffect(() => { restoreQueryCache(queryClient); return startQueryCachePersistence(queryClient); }, [queryClient]);
   useEffect(() => { void warmCovers(queryClient); }, [queryClient]);
 
