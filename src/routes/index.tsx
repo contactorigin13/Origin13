@@ -37,6 +37,9 @@ function Hero() {
   const { data: visibility = {} } = useVisibility();
   const slides = (saved ?? fallbackSlides()).filter(s => isPublished(visibility, `slide_${s.id}`));
   const [i, setI] = useState(0);
+  // Only download the slide being shown and the one after it, not all five at once.
+  const [reached, setReached] = useState(0);
+  useEffect(() => { setReached((r) => Math.max(r, i)); }, [i]);
   const go = useCallback((d: number) => setI((x) => (x + d + slides.length) % slides.length), [slides.length]);
   useEffect(() => {
     const t = setTimeout(() => go(1), 7000);
@@ -49,7 +52,9 @@ function Hero() {
     <section className="home-hero media-tone grain relative min-h-[calc(100svh-1.5rem)] overflow-hidden">
       {slides.map((f, idx) => (
         <div key={f.id} className={cn("absolute inset-0 transition-opacity duration-[1400ms]", idx === i ? "opacity-100" : "opacity-0")} aria-hidden={idx !== i}>
-          <img src={f.image} alt={f.tag} className={cn("h-full w-full object-cover", idx === i && "animate-kenburns")} fetchPriority={idx === 0 ? "high" : "auto"} />
+          {(idx === 0 || idx <= Math.max(reached, i) + 1) && (
+            <img src={f.image} alt={f.tag} decoding="async" className={cn("h-full w-full object-cover", idx === i && "animate-kenburns")} fetchPriority={idx === 0 ? "high" : "low"} />
+          )}
         </div>
       ))}
       <div className="absolute inset-0 bg-hero-scrim" />
