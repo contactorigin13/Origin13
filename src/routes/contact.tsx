@@ -1,5 +1,6 @@
 import { getPageMetadata } from "@/lib/page-metadata.functions";
 import { resolveStudio } from "@/lib/editor-fields";
+import { emailList } from "@/lib/emails";
 import { Published } from "@/components/site/Published";
 import { SiteText } from "@/components/site/SiteText";
 import { Button } from "@/components/ui/button";
@@ -33,8 +34,9 @@ function Contact() {
   const [sent, setSent] = useState(false);
   const site = useSiteContent();
   const { company, services } = resolveStudio(site);
-  const contactRows: { icon: LucideIcon; label: string; lines: string[]; href?: string }[] = [
-  { icon: Mail, label: (site["contact_email_label"] ?? ""), lines: [company.email], href: `mailto:${company.email}` },
+  const emails = emailList(company.email);
+  const contactRows: { icon: LucideIcon; label: string; lines: string[]; href?: string; hrefs?: string[] }[] = [
+  { icon: Mail, label: (site["contact_email_label"] ?? ""), lines: emails, hrefs: emails.map((e) => `mailto:${e}`) },
   { icon: Phone, label: (site["contact_phone_label"] ?? ""), lines: [company.phone], href: company.phoneHref },
   { icon: MapPin, label: (site["contact_address_label"] ?? ""), lines: [company.address, company.location] },
   { icon: Clock, label: (site["contact_hours_label"] ?? ""), lines: [company.hours] },
@@ -46,7 +48,7 @@ function Contact() {
     const d = new FormData(e.currentTarget);
     const subject = `Project inquiry — ${d.get("service")} — ${d.get("organization") || d.get("name")}`;
     const body = `Name: ${d.get("name")}\nOrganization: ${d.get("organization")}\nEmail: ${d.get("email")}\nService: ${d.get("service")}\n\n${d.get("message")}`;
-    window.location.href = `mailto:${company.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${emails[0]}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
 
@@ -66,13 +68,14 @@ function Contact() {
               <c.icon className="mt-1 h-5 w-5 shrink-0 text-primary" />
               <div>
                 <p className="eyebrow !text-muted-foreground">{(c["label"] ?? "")}</p>
-                {c.lines.map((l) =>
-                  (c["href"] ?? "") ? (
-                    <a key={l} href={(c["href"] ?? "")} className="mt-2 block text-lg hover:text-primary">{l}</a>
+                {c.lines.map((l, i) => {
+                  const href = c.hrefs?.[i] ?? c.href ?? "";
+                  return href ? (
+                    <a key={l} href={href} className="mt-2 block text-lg hover:text-primary">{l}</a>
                   ) : (
                     <p key={l} className="mt-2 text-lg">{l}</p>
-                  ),
-                )}
+                  );
+                })}
               </div>
             </div>
           ))}
@@ -88,7 +91,7 @@ function Contact() {
               <h2 className="mt-6 text-4xl">{(site["contact_thanks"] ?? "")}</h2>
               <p className="mx-auto mt-4 max-w-md text-muted-foreground">
                 {(site["contact_success"] ?? "")}{" "}
-                <a className="text-primary" href={`mailto:${company.email}`}>{company.email}</a>.
+                <a className="text-primary" href={`mailto:${emails[0]}`}>{emails[0]}</a>.
               </p>
               <button onClick={() => setSent(false)} className="mt-8 text-sm font-semibold underline underline-offset-4">{(site["contact_another"] ?? "")}</button>
             </div>

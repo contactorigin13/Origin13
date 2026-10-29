@@ -12,7 +12,9 @@ const copy: Record<string, Record<string, string>> = {
 export const EXTRA_CONTENT_FIELDS: EditorField[] = [
   ...Object.entries({ home: ['Origin 13 Communication — Documentary Film & Visual Storytelling, Ethiopia', 'Films, photography, live events, brand design and campaigns from an Addis Ababa team working across East Africa.'], about: ['About — Origin 13 Communication', 'Meet Origin 13, an Addis Ababa team making films, photographs, designs and campaigns across East Africa.'], services: ['Films, Events, Design & Marketing Services | Origin 13', 'Documentary films and photography, live events, brand design, digital marketing and communications from Origin 13 in Addis Ababa.'], portfolio: ['Portfolio — Films, Events, Brands & Campaigns | Origin 13', 'Work from all five Origin 13 services: documentaries, live event coverage, brand design, digital campaigns and communication plans.'], contact: ['Contact | Origin 13 Communication', 'Contact Origin 13 in Addis Ababa for films, photography, event coverage, design, marketing and communications.'] }).flatMap(([page, values]) => [field(`seo_${page}_title`, `${page[0]?.toUpperCase()}${page.slice(1)} — Search title`, values[0] ?? ''), field(`seo_${page}_description`, `${page[0]?.toUpperCase()}${page.slice(1)} — Search description`, values[1] ?? '', true)]),
   ...Object.entries(copy).flatMap(([group, values]) => Object.entries(values).map(([key, value]) => field(key, `${group} — ${key.replace(`${group.toLowerCase()}_`, '').replaceAll('_', ' ')}`, value))),
-  ...Object.entries(COMPANY).map(([key, value]) => field(`company_${key}`, `Shared — Company — ${key}`, value)),
+  ...Object.entries(COMPANY).map(([key, value]) => key === "email"
+    ? field("company_email", "Contact — Email addresses (one per line; the first one receives contact-form messages)", value, true)
+    : field(`company_${key}`, `Shared — Company — ${key}`, value)),
   ...NAV.map((n, i) => field(`nav_${i}_label`, `Shared — Navigation — ${n.label}`, n.label)),
   field("portfolio_works_label", "Portfolio — Work count label", "works"),
   field("portfolio_video_label", "Portfolio — Video label", "Video"),

@@ -1,4 +1,5 @@
 import { resolveStudio } from "@/lib/editor-fields";
+import { emailList } from "@/lib/emails";
 import { useVisibility } from "@/lib/visibility";
 import { isPagePublished } from "@/lib/publication";
 import { useSiteContent } from "@/lib/site-content";
@@ -37,7 +38,9 @@ export function SiteFooter() {
           </div>
           <div className="space-y-5 text-sm text-foreground/80">
             <p className="eyebrow !text-muted-foreground"><SiteText name="footer_contact_label">Contact</SiteText></p>
-            <a href={`mailto:${company.email}`} className="block hover:text-primary">{company.email}</a>
+            {emailList(company.email).map((email) => (
+              <a key={email} href={`mailto:${email}`} className="block hover:text-primary">{email}</a>
+            ))}
             <a href={company.phoneHref} className="block hover:text-primary">{company.phone}</a>
             <p>{company.address}</p>
             <p>{company.location}</p>
