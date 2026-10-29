@@ -19,6 +19,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { warmCovers } from "@/lib/covers";
 import { restoreQueryCache, startQueryCachePersistence } from "@/lib/cache-persist";
 import { loadSiteSnapshot, seedQueryClient } from "@/lib/site-snapshot";
+import { SITE_URL } from "@/lib/site-url";
 
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
@@ -91,7 +92,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Addis Ababa documentary film, photography and communications studio for humanitarian and development institutions across East Africa." },
       { name: "author", content: "Origin 13 Communication PLC" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Origin 13 Communication" },
+      { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Origin 13 Communication — documentary film and visual storytelling from Addis Ababa" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
     ],
     links: [
       {
