@@ -4,7 +4,7 @@ import { useVisibility } from "@/lib/visibility";
 import { isPagePublished } from "@/lib/publication";
 import { useSiteContent } from "@/lib/site-content";
 import { SiteText } from "@/components/site/SiteText";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowUp, ArrowUpRight } from "lucide-react";
 import { COMPANY, NAV } from "@/data/studio";
 
@@ -12,20 +12,24 @@ export function SiteFooter() {
   const c = useSiteContent();
   const { company, nav } = resolveStudio(c);
   const { data: visibility = {} } = useVisibility();
+  // The contact page is already the "let's talk" page, so its invitation would only link to itself.
+  const onContact = useRouterState({ select: (s) => s.location.pathname.replace(/\/+$/, "") === "/contact" });
   return (
     <footer className="media-tone border-t border-border bg-scrim">
       <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-        <div className="grid gap-16 lg:grid-cols-[1.4fr_1fr_1fr]">
-          <div>
-            <p className="eyebrow"><SiteText name="footer_eyebrow">Work with Origin 13</SiteText></p>
-            <h2 className="mt-5 max-w-lg text-4xl leading-tight md:text-5xl">
-              <SiteText name="footer_title">Have a project <em className="text-primary">in mind?</em></SiteText>
-            </h2>
-            <Link to="/contact" className="group mt-8 inline-flex items-center gap-3 text-lg font-semibold">
-              <span className="border-b border-primary pb-1"><SiteText name="footer_cta">Let’s talk</SiteText></span>
-              <ArrowUpRight className="h-5 w-5 text-primary transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
-            </Link>
-          </div>
+        <div className={onContact ? "grid gap-16 lg:grid-cols-2" : "grid gap-16 lg:grid-cols-[1.4fr_1fr_1fr]"}>
+          {!onContact && (
+            <div>
+              <p className="eyebrow"><SiteText name="footer_eyebrow">Work with Origin 13</SiteText></p>
+              <h2 className="mt-5 max-w-lg text-4xl leading-tight md:text-5xl">
+                <SiteText name="footer_title">Have a project <em className="text-primary">in mind?</em></SiteText>
+              </h2>
+              <Link to="/contact" className="group mt-8 inline-flex items-center gap-3 text-lg font-semibold">
+                <span className="border-b border-primary pb-1"><SiteText name="footer_cta">Let’s talk</SiteText></span>
+                <ArrowUpRight className="h-5 w-5 text-primary transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          )}
           <div>
             <p className="eyebrow !text-muted-foreground"><SiteText name="footer_studio_label">Studio</SiteText></p>
             <ul className="mt-5 space-y-3">
