@@ -1,6 +1,7 @@
 import { resolveStudio } from "@/lib/editor-fields";
 import { emailList } from "@/lib/emails";
 import { SITE_URL } from "@/lib/site-url";
+import { socialLinks } from "@/lib/socials";
 
 /**
  * Business details for search engines (schema.org), built from the company settings in the Admin,
@@ -22,7 +23,7 @@ export function structuredDataJson(content: Record<string, string> = {}): string
         url: `${SITE_URL}/`,
         logo: `${SITE_URL}/images/logo-dark.svg`,
         image: `${SITE_URL}/og-image.jpg`,
-        description: "Addis Ababa documentary film, photography and communications studio for humanitarian and development institutions across East Africa.",
+        description: "Films, photography, live events, brand design and campaigns from an Addis Ababa team working across East Africa.",
         email: emailList(company.email)[0],
         telephone: company.phone,
         address: {
@@ -32,6 +33,7 @@ export function structuredDataJson(content: Record<string, string> = {}): string
           addressCountry: country,
         },
         areaServed: ["Ethiopia", "East Africa"],
+        sameAs: socialLinks(content).length ? socialLinks(content).map((s) => s.url) : undefined,
       },
       {
         "@type": "WebSite",

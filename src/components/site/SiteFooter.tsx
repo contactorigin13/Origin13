@@ -1,5 +1,6 @@
 import { resolveStudio } from "@/lib/editor-fields";
 import { emailList } from "@/lib/emails";
+import { socialLinks } from "@/lib/socials";
 import { useVisibility } from "@/lib/visibility";
 import { isPagePublished } from "@/lib/publication";
 import { useSiteContent } from "@/lib/site-content";
@@ -49,6 +50,13 @@ export function SiteFooter() {
             <p>{company.address}</p>
             <p>{company.location}</p>
             <p className="text-muted-foreground">{company.hours}</p>
+            {socialLinks(c).length > 0 && (
+              <div className="flex flex-wrap gap-x-5 gap-y-2 pt-2">
+                {socialLinks(c).map((s) => (
+                  <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer" className="hover:text-primary">{s.label}</a>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         <div className="mt-20 flex flex-col items-start justify-between gap-6 border-t border-border pt-8 text-xs text-muted-foreground md:flex-row md:items-center">
@@ -65,7 +73,10 @@ export function SiteFooter() {
               <ArrowUp className="absolute h-5 w-5 translate-y-14 text-primary-foreground transition-transform duration-500 group-hover:translate-y-0" />
             </span>
           </button>
-          <p>© {new Date().getFullYear()} {company.name}. <SiteText name="footer_rights">All rights reserved.</SiteText></p>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <p>© {new Date().getFullYear()} {company.name}. <SiteText name="footer_rights">All rights reserved.</SiteText></p>
+            <Link to="/privacy" className="transition-colors hover:text-primary"><SiteText name="footer_privacy">Privacy policy</SiteText></Link>
+          </div>
         </div>
 
       </div>
