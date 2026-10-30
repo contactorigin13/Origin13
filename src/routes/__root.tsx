@@ -89,9 +89,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Origin 13 Communication — Documentary Film & Visual Storytelling, Ethiopia" },
-      { name: "description", content: "Addis Ababa documentary film, photography and communications studio for humanitarian and development institutions across East Africa." },
+      { title: "Origin 13 Communication | Creative Studio, Addis Ababa" },
+      { name: "description", content: "Films, photography, live events, brand design and campaigns from an Addis Ababa team working across East Africa." },
       { name: "author", content: "Origin 13 Communication PLC" },
+      { name: "theme-color", content: "#090909" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Origin 13 Communication" },
       { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
@@ -107,7 +108,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/manifest.webmanifest" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
