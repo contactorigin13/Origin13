@@ -20,6 +20,7 @@ import { warmCovers } from "@/lib/covers";
 import { restoreQueryCache, startQueryCachePersistence } from "@/lib/cache-persist";
 import { loadSiteSnapshot, seedQueryClient } from "@/lib/site-snapshot";
 import { SITE_URL } from "@/lib/site-url";
+import { structuredDataJson } from "@/lib/structured-data";
 
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
@@ -84,7 +85,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
+  head: ({ loaderData }) => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -100,6 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
     ],
+    scripts: [{ type: "application/ld+json", children: structuredDataJson(loaderData?.content) }],
     links: [
       {
         rel: "stylesheet",
