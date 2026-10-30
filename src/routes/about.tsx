@@ -1,4 +1,5 @@
 import { getPageMetadata } from "@/lib/page-metadata.functions";
+import { canonicalLink, pageUrl } from "@/lib/site-url";
 import { resolveStudio } from "@/lib/editor-fields";
 import { Published } from "@/components/site/Published";
 import { SiteText } from "@/components/site/SiteText";
@@ -13,7 +14,9 @@ import { TeamSection } from "@/components/site/TeamSection";
 export const Route = createFileRoute("/about")({
   loader: () => getPageMetadata({ data: { page: "about" } }),
   head: ({ loaderData }) => ({
+    links: [canonicalLink("/about")],
     meta: [
+      { property: "og:url", content: pageUrl("/about") },
       { title: loaderData?.["seo_about_title"] || "About — Origin 13 Communication" },
       { name: "description", content: loaderData?.["seo_about_description"] || "Meet Origin 13, an Addis Ababa team making films, photographs, designs and campaigns across East Africa." },
       { property: "og:title", content: loaderData?.["seo_about_title"] || "About Origin 13 Communication" },
@@ -43,7 +46,7 @@ function About() {
         <Reveal>
           <SectionHeading eyebrow={(c["about_story_label"] ?? "")} title={<><SiteText name="about_story_title">Local knowledge. <br />Careful work.</SiteText></>} />
         </Reveal>
-        <Reveal delay={120} className="space-y-6 text-lg leading-relaxed text-muted-foreground">
+        <Reveal delay={120} className="space-y-6 text-lg leading-relaxed text-muted-foreground lg:pt-9">
           {paras.map((p, i) => (
             <p key={i} className={i === paras.length - 1 ? "text-foreground" : undefined}>{p}</p>
           ))}
@@ -75,7 +78,7 @@ function About() {
             <p className="mt-6 font-display text-8xl leading-none text-primary"><SiteText name="about_years">12+</SiteText></p>
             <h2 id="experience-heading" className="mt-6 max-w-md text-4xl leading-tight"><SiteText name="about_experience_title">Years of working together. Experience in every project.</SiteText></h2>
           </Reveal>
-          <Reveal delay={120} className="space-y-6 text-lg leading-relaxed text-muted-foreground">
+          <Reveal delay={120} className="space-y-6 text-lg leading-relaxed text-muted-foreground lg:pt-10">
             {(c["about_experience"] ?? "").split(/\n\s*\n/).filter(Boolean).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
           </Reveal>
         </div>

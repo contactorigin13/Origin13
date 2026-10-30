@@ -1,4 +1,5 @@
 import { getPageMetadata } from "@/lib/page-metadata.functions";
+import { canonicalLink, pageUrl } from "@/lib/site-url";
 import { resolveStudio } from "@/lib/editor-fields";
 import { useVisibility } from "@/lib/visibility";
 import { isPublished } from "@/lib/publication";
@@ -14,7 +15,9 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/services")({
   loader: () => getPageMetadata({ data: { page: "services" } }),
   head: ({ loaderData }) => ({
+    links: [canonicalLink("/services")],
     meta: [
+      { property: "og:url", content: pageUrl("/services") },
       { title: loaderData?.["seo_services_title"] || "Films, Events, Design & Marketing Services | Origin 13" },
       { name: "description", content: loaderData?.["seo_services_description"] || "Documentary films and photography, live events, brand design, digital marketing and communications from Origin 13 in Addis Ababa." },
       { property: "og:title", content: loaderData?.["seo_services_title"] || "Services — Origin 13 Communication" },

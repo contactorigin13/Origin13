@@ -1,4 +1,5 @@
 import { getPageMetadata } from "@/lib/page-metadata.functions";
+import { canonicalLink, pageUrl } from "@/lib/site-url";
 import { resolveStudio } from "@/lib/editor-fields";
 import { useVisibility } from "@/lib/visibility";
 import { isPublished } from "@/lib/publication";
@@ -20,7 +21,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/")({
   loader: () => getPageMetadata({ data: { page: "home" } }),
   head: ({ loaderData }) => ({
+    links: [canonicalLink("/")],
     meta: [
+      { property: "og:url", content: pageUrl("/") },
       { title: loaderData?.["seo_home_title"] || "Origin 13 Communication — Documentary Film & Visual Storytelling, Ethiopia" },
       { name: "description", content: loaderData?.["seo_home_description"] || "Films, photography, live events, brand design and campaigns from an Addis Ababa team working across East Africa." },
       { property: "og:title", content: loaderData?.["seo_home_title"] || "Origin 13 Communication — Films, design & communications" },
@@ -100,7 +103,7 @@ function Home() {
   const c = useSiteContent();
   const { data: savedStats } = useHomeStats();
   const stats = savedStats ?? STATS;
-  const { featured, pillars, services } = resolveStudio(c);
+  const { featured, homePillars: pillars, services } = resolveStudio(c);
   const { data: visibility = {} } = useVisibility();
   return (
     <>

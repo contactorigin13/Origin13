@@ -51,7 +51,7 @@ export type Story = {
 export const COMPANY = {
   name: "Origin 13 Communication PLC",
   short: "Origin 13",
-  domain: "www.origin13.com",
+  domain: "origin13.com",
   email: "info@origin13.com",
   phone: "+251 9 58 38 78 38",
   phoneHref: "tel:+251958387838",

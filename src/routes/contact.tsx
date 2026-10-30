@@ -1,4 +1,5 @@
 import { getPageMetadata } from "@/lib/page-metadata.functions";
+import { canonicalLink, pageUrl } from "@/lib/site-url";
 import { resolveStudio } from "@/lib/editor-fields";
 import { emailList } from "@/lib/emails";
 import { Published } from "@/components/site/Published";
@@ -14,7 +15,9 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/contact")({
   loader: () => getPageMetadata({ data: { page: "contact" } }),
   head: ({ loaderData }) => ({
+    links: [canonicalLink("/contact")],
     meta: [
+      { property: "og:url", content: pageUrl("/contact") },
       { title: loaderData?.["seo_contact_title"] || "Contact | Origin 13 Communication" },
       { name: "description", content: loaderData?.["seo_contact_description"] || "Contact Origin 13 in Addis Ababa for films, photography, event coverage, design, marketing and communications." },
       { property: "og:title", content: loaderData?.["seo_contact_title"] || "Contact Origin 13 Communication" },

@@ -1,4 +1,5 @@
 import { getPageMetadata } from "@/lib/page-metadata.functions";
+import { canonicalLink, pageUrl } from "@/lib/site-url";
 import { Published } from "@/components/site/Published";
 import { useVisibility } from "@/lib/visibility";
 import { isPublished } from "@/lib/publication";
@@ -18,7 +19,9 @@ import { resolvePortfolioContent, type PortfolioContent } from "@/lib/portfolio-
 export const Route = createFileRoute("/portfolio")({
   loader: () => getPageMetadata({ data: { page: "portfolio" } }),
   head: ({ loaderData }) => ({
+    links: [canonicalLink("/portfolio")],
     meta: [
+      { property: "og:url", content: pageUrl("/portfolio") },
       { title: loaderData?.["seo_portfolio_title"] || "Portfolio — Films, Events, Brands & Campaigns | Origin 13" },
       { name: "description", content: loaderData?.["seo_portfolio_description"] || "Work from all five Origin 13 services: documentaries, live event coverage, brand design, digital campaigns and communication plans." },
       { property: "og:title", content: loaderData?.["seo_portfolio_title"] || "Origin 13 Portfolio — Everything We Make" },
