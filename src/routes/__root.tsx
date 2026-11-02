@@ -9,6 +9,7 @@ import {
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, useLayoutEffect, type ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import { Toaster } from "@/components/ui/sonner";
 import { Published, PublishedPage } from "@/components/site/Published";
@@ -90,7 +91,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Origin 13 Communication | Creative Studio, Addis Ababa" },
-      { name: "description", content: "Films, photography, live events, brand design and campaigns from an Addis Ababa team working across East Africa." },
+      {
+        name: "description",
+        content:
+          "Films, photography, live events, brand design and campaigns from an Addis Ababa team working across East Africa.",
+      },
       { name: "author", content: "Origin 13 Communication PLC" },
       { name: "theme-color", content: "#090909" },
       // Stops phones from turning the phone number into a call link on their own.
@@ -100,14 +105,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Origin 13 Communication — documentary film and visual storytelling from Addis Ababa" },
+      {
+        property: "og:image:alt",
+        content:
+          "Origin 13 Communication — documentary film and visual storytelling from Addis Ababa",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
     ],
     scripts: [
       { type: "application/ld+json", children: structuredDataJson(loaderData?.content) },
       // Cookie-free visitor counts and page-speed data. They start working once Analytics and Speed Insights are switched on in the Vercel project.
-      { children: "window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};" },
+      {
+        children:
+          "window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};",
+      },
       { src: "/_vercel/insights/script.js", defer: true },
       { src: "/_vercel/speed-insights/script.js", defer: true },
     ],
@@ -129,7 +141,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
   }),
   // Load the saved content on the server so the first page arrives complete (no "Loading…", no flash of old content).
-  loader: (ctx) => loadSiteSnapshot((ctx as { location?: { pathname?: string } }).location?.pathname),
+  loader: (ctx) =>
+    loadSiteSnapshot((ctx as { location?: { pathname?: string } }).location?.pathname),
   staleTime: Infinity,
   shellComponent: RootShell,
   component: RootComponent,
@@ -154,19 +167,34 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   seedQueryClient(queryClient, Route.useLoaderData());
-  useIsoLayoutEffect(() => { restoreQueryCache(queryClient); return startQueryCachePersistence(queryClient); }, [queryClient]);
-  useEffect(() => { void warmCovers(queryClient); }, [queryClient]);
+  useIsoLayoutEffect(() => {
+    restoreQueryCache(queryClient);
+    return startQueryCachePersistence(queryClient);
+  }, [queryClient]);
+  useEffect(() => {
+    void warmCovers(queryClient);
+  }, [queryClient]);
 
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-primary-foreground">Skip to content</a>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-primary-foreground"
+      >
+        Skip to content
+      </a>
       <SiteHeader />
       <main id="main" tabIndex={-1} className="outline-none">
-        <PublishedPage><Outlet /></PublishedPage>
+        <PublishedPage>
+          <Outlet />
+        </PublishedPage>
       </main>
-      <Published name="site_footer"><SiteFooter /></Published>
+      <Published name="site_footer">
+        <SiteFooter />
+      </Published>
       <Toaster />
+      <Analytics />
     </QueryClientProvider>
   );
 }
