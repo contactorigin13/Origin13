@@ -55,6 +55,7 @@ export const COMPANY = {
   email: "info@origin13.com",
   phone: "+251 9 58 38 78 38",
   phoneHref: "tel:+251958387838",
+  whatsapp: "",
   address: "22, Rebka Bldg, 2nd Floor, Office no. 202",
   location: "Addis Ababa, Ethiopia",
   hours: "Monday – Friday, 8:30 AM – 5:30 PM (EAT)",
@@ -399,6 +400,8 @@ export type WorkTile = {
   service: string; // service id from SERVICES
   kind: "photo" | "video";
   image?: string; // photos only; videos use an animated placeholder
+  /** Optional player address; when set, the tile shows a play button that opens the video in place. */
+  video?: string;
   blurb: string;
   client?: string;
   tall?: boolean; // taller tile in the grid

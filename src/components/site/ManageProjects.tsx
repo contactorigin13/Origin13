@@ -10,7 +10,9 @@ import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { usePhotoCropper } from "@/components/site/PhotoCropDialog";
-import { BUCKET, PROJECT_KINDS, fetchProjects, isStoragePath, type Project, type ProjectKind, type ProjectSlide } from "@/lib/projects";
+import { BUCKET, PROJECT_KINDS, fetchProjects, isStoragePath, storyVideoUrl, type Project, type ProjectKind, type ProjectSlide } from "@/lib/projects";
+import { prepareImage } from "@/lib/image-prepare";
+import { parseVideo } from "@/lib/video";
 import { BRAND_CLIENTS, SERVICES, WORK_SHOWCASE } from "@/data/studio";
 import { useVisibility } from "@/lib/visibility";
 import { isPublished } from "@/lib/publication";
@@ -34,7 +36,8 @@ export function ItemRow({ thumb, title, note, published, onPublish, busy, action
   );
 }
 
-async function uploadPhoto(file: File) {
+async function uploadPhoto(original: File) {
+  const file = await prepareImage(original);
   if (file.size > 10 * 1024 * 1024) throw new Error("Please choose a photo under 10 MB.");
   const path = `${crypto.randomUUID()}.${file.name.split(".").pop() || "jpg"}`;
   const { error } = await supabase.storage.from(BUCKET).upload(path, file, { contentType: file.type });
@@ -55,6 +58,7 @@ function ProjectForm({ project, onDone }: { project?: Project; onDone: () => voi
   const [mediaType, setMediaType] = useState<Project["media_type"]>(project?.media_type ?? "image");
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState(project?.media_type === "image" ? project.display_url : "");
+  const [storyVideo, setStoryVideo] = useState(project ? storyVideoUrl(project) : "");
   const [videoUrl, setVideoUrl] = useState(project?.media_type === "video_embed" ? project.media_url : "");
   const [slides, setSlides] = useState<SlideDraft[]>(project?.slides.length ? project.slides.map((s) => ({ ...s, ...(s.display_url ? { preview: s.display_url } : {}) })) : [{ media_url: "", chapter: "01 — Overview", title: "", text: "" }]);
   const [busy, setBusy] = useState(false);
@@ -69,6 +73,10 @@ function ProjectForm({ project, onDone }: { project?: Project; onDone: () => voi
       let media_url = project?.media_url ?? "";
       let media_type: Project["media_type"] = kind === "upload" ? mediaType : "image";
       let savedSlides: ProjectSlide[] = [];
+      if (kind === "story" && storyVideo.trim()) {
+        if (!parseVideo(storyVideo)) throw new Error("Please paste a YouTube or Vimeo link, for example https://www.youtube.com/watch?v=...");
+        savedSlides = [{ media_url: storyVideo.trim(), chapter: "video", title: "", text: "" }];
+      }
       if (kind === "brand_kit") {
         if (!slides.length) throw new Error("Add at least one slide.");
         for (const s of slides) if (!s.file && !s.media_url) throw new Error("Every slide needs a photo.");
@@ -161,6 +169,13 @@ function ProjectForm({ project, onDone }: { project?: Project; onDone: () => voi
               <Label htmlFor="pf-file">Photo (up to 10 MB)</Label>
               {preview && <img src={preview} alt="" className="aspect-[4/3] w-48 object-cover" />}
               <Input id="pf-file" type="file" accept="image/*" onChange={async (e) => { const f = await pick(e.target.files?.[0]); e.target.value = ""; if (f) { setFile(f); setPreview(URL.createObjectURL(f)); } }} />
+            </div>
+          )}
+          {kind === "story" && (
+            <div className="space-y-2">
+              <Label htmlFor="pf-story-video">Video link (optional)</Label>
+              <Input id="pf-story-video" placeholder="https://www.youtube.com/watch?v=... or https://vimeo.com/..." value={storyVideo} onChange={(e) => setStoryVideo(e.target.value)} />
+              <p className="text-xs text-muted-foreground">Paste a YouTube or Vimeo link and visitors can watch it on the website itself. The photo above is shown as the cover with a play button. Leave empty for a photo only.</p>
             </div>
           )}
         </>

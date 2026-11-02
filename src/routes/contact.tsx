@@ -2,13 +2,14 @@ import { getPageMetadata } from "@/lib/page-metadata.functions";
 import { canonicalLink, pageUrl } from "@/lib/site-url";
 import { resolveStudio } from "@/lib/editor-fields";
 import { emailList } from "@/lib/emails";
+import { whatsappLink } from "@/lib/socials";
 import { Published } from "@/components/site/Published";
 import { SiteText } from "@/components/site/SiteText";
 import { Button } from "@/components/ui/button";
 import { useSiteContent } from "@/lib/site-content";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { Clock, Mail, MapPin, Phone, Send, type LucideIcon } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle, Phone, Send, type LucideIcon } from "lucide-react";
 import { COMPANY, SERVICES } from "@/data/studio";
 import { PageHero } from "@/components/site/PageHero";
 
@@ -41,6 +42,7 @@ function Contact() {
   const contactRows: { icon: LucideIcon; label: string; lines: string[]; href?: string; hrefs?: string[] }[] = [
   { icon: Mail, label: (site["contact_email_label"] ?? ""), lines: emails, hrefs: emails.map((e) => `mailto:${e}`) },
   { icon: Phone, label: (site["contact_phone_label"] ?? ""), lines: [company.phone], href: company.phoneHref },
+  ...(whatsappLink(company.whatsapp) ? [{ icon: MessageCircle, label: "WhatsApp", lines: [`Chat on WhatsApp · ${company.whatsapp}`], href: whatsappLink(company.whatsapp) }] : []),
   { icon: MapPin, label: (site["contact_address_label"] ?? ""), lines: [company.address, company.location] },
   { icon: Clock, label: (site["contact_hours_label"] ?? ""), lines: [company.hours] },
 ];

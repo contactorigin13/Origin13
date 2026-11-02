@@ -15,7 +15,9 @@ export const EXTRA_CONTENT_FIELDS: EditorField[] = [
   ...Object.entries(copy).flatMap(([group, values]) => Object.entries(values).map(([key, value]) => field(key, `${group} — ${key.replace(`${group.toLowerCase()}_`, '').replaceAll('_', ' ')}`, value))),
   ...Object.entries(COMPANY).map(([key, value]) => key === "email"
     ? field("company_email", "Contact — Email addresses (one per line; the first one receives contact-form messages)", value, true)
-    : field(`company_${key}`, `Shared — Company — ${key}`, value)),
+    : key === "whatsapp"
+      ? field("company_whatsapp", "Contact — WhatsApp number (with country code, e.g. +251 91 122 3344; leave empty to hide)", value)
+      : field(`company_${key}`, `Shared — Company — ${key}`, value)),
   ...SOCIALS.map(([key, label]) => field(`social_${key}`, `Contact — Social links — ${label} (full web address; leave empty to hide)`, '')),
   ...NAV.map((n, i) => field(`nav_${i}_label`, `Shared — Navigation — ${n.label}`, n.label)),
   field("portfolio_works_label", "Portfolio — Work count label", "works"),
@@ -24,6 +26,9 @@ export const EXTRA_CONTENT_FIELDS: EditorField[] = [
   field("portfolio_typeface_label", "Portfolio — Typeface label", "Typeface"),
   field("portfolio_typeface_alphabet", "Portfolio — Typeface alphabet sample", "Aa Bb Cc Dd Ee Ff Gg 0123456789"),
   field('site_logo', 'Shared — Website logo', '', false, true),
+  field('home_showreel_label', 'Home — Showreel — label', 'Showreel'),
+  field('home_showreel_title', 'Home — Showreel — heading', 'Watch our work.'),
+  field('home_showreel_url', 'Home — Showreel — video link (YouTube or Vimeo; leave empty to hide the section)', ''),
   field('home_pillars_image', 'Home — How we work photo', SERVICES[0]?.image ?? '', false, true),
   ...PILLARS.flatMap((p, i) => [field(`pillar_${i}_title`, `About — Principle ${i + 1} — title`, p.title), field(`pillar_${i}_body`, `About — Principle ${i + 1} — text`, p.body, true)]),
   ...PILLARS.flatMap((_, i) => [field(`home_pillar_${i}_title`, `Home — How we work ${i + 1} — title (empty = same as About)`, ''), field(`home_pillar_${i}_body`, `Home — How we work ${i + 1} — text (empty = same as About)`, '', true)]),

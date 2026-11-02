@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { type IdentityBoard, type WorkTile } from "@/data/studio";
 import { cn } from "@/lib/utils";
+import { withAutoplay } from "@/lib/video";
 
 /** Home-style slideshow for a group of portfolio tiles (one brand, or one service). */
 export function BrandSlideshow({ client, tiles }: {
@@ -15,8 +16,9 @@ export function BrandSlideshow({ client, tiles }: {
   const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [watching, setWatching] = useState<string | null>(null);
   const root = useRef<HTMLElement>(null);
-  const playing = visible && !paused && !reduced;
+  const playing = visible && !paused && !reduced && !watching;
   const label = client.name ?? "Work";
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export function BrandSlideshow({ client, tiles }: {
 
   const tile = tiles[index] ?? tiles[0];
   if (!tile) return null;
-  const go = (direction: number) => setIndex((i) => (i + direction + tiles.length) % tiles.length);
+  const go = (direction: number) => { setWatching(null); setIndex((i) => (i + direction + tiles.length) % tiles.length); };
 
   return (
     <article ref={root} data-brand={client.id} aria-label={`${label} slideshow`} aria-roledescription="carousel" className="min-w-0">
@@ -59,13 +61,22 @@ export function BrandSlideshow({ client, tiles }: {
                 <span className="flex h-14 w-14 items-center justify-center rounded-full bg-scrim/60 backdrop-blur"><Play className="h-5 w-5 fill-current text-foreground" /></span>
               </div>
             )}
+            {slide.video && i === index && (
+              watching === slide.id ? (
+                <iframe src={withAutoplay(slide.video)} title={slide.title} className="absolute inset-0 z-20 h-full w-full bg-scrim" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+              ) : (
+                <button type="button" onClick={() => setWatching(slide.id)} aria-label={`Play video: ${slide.title}`} className="absolute inset-0 z-20 flex items-center justify-center bg-scrim/20 transition-colors hover:bg-scrim/35">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-elegant transition-transform duration-300 hover:scale-110"><Play className="h-6 w-6 fill-current" /></span>
+                </button>
+              )
+            )}
           </div>
         ))}
       </div>
       <div className="mt-3 flex items-center justify-between gap-3">
         <div className="flex flex-1 gap-2">
           {tiles.map((slide, i) => (
-            <Button key={slide.id} variant="ghost" onClick={() => setIndex(i)} aria-label={`Show ${slide.title}`} aria-pressed={i === index} className="h-8 min-w-0 flex-1 rounded-none p-0">
+            <Button key={slide.id} variant="ghost" onClick={() => { setWatching(null); setIndex(i); }} aria-label={`Show ${slide.title}`} aria-pressed={i === index} className="h-8 min-w-0 flex-1 rounded-none p-0">
               <span className={cn("relative block h-px w-full overflow-hidden", i === index ? "bg-primary/30" : "bg-border")}>
                 {i === index && <span key={`${index}-${playing}`} className={cn("absolute inset-0 bg-primary", playing && "animate-progress")} />}
               </span>

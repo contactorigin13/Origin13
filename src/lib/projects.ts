@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { cachedSignedUrls } from "@/lib/signed-urls";
+import { parseVideo } from "@/lib/video";
 
 export const BUCKET = "portfolio-assets";
 
@@ -38,13 +39,12 @@ export function parseSlides(value: unknown): ProjectSlide[] {
 
 /** Turns a normal YouTube/Vimeo link into a link that can play inside the page. */
 export function toEmbedUrl(url: string): string {
-  const u = url.trim();
-  const yt = u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/);
-  if (yt) return `https://www.youtube.com/embed/${yt[1]}`;
-  const vimeo = u.match(/vimeo\.com\/(?:video\/)?(\d+)/);
-  if (vimeo) return `https://player.vimeo.com/video/${vimeo[1]}`;
-  return u;
+  return parseVideo(url)?.embed ?? url.trim();
 }
+
+/** A story project can carry an optional video link (stored in its slides list, so no database change is needed). */
+export const storyVideoUrl = (p: Pick<Project, "kind" | "slides">): string =>
+  p.kind === "story" ? (p.slides.find((s) => s.chapter === "video")?.media_url ?? "") : "";
 
 /** Uploaded files are stored as "storage:<path>". Others are normal links. */
 export const isStoragePath = (url: string) => url.startsWith("storage:");

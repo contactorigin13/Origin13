@@ -1,4 +1,5 @@
 import { getPageMetadata } from "@/lib/page-metadata.functions";
+import { Showreel } from "@/components/site/Showreel";
 import { canonicalLink, pageUrl } from "@/lib/site-url";
 import { resolveStudio } from "@/lib/editor-fields";
 import { useVisibility } from "@/lib/visibility";
@@ -8,7 +9,7 @@ import { SiteText } from "@/components/site/SiteText";
 import websiteMedia10 from "@/assets/crew.jpg.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
-import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 import { FEATURED, PILLARS, SERVICES, STATS, type Story } from "@/data/studio";
 import { fallbackSlides, useHomeSlides, useHomeStats } from "@/lib/home-content";
 import { useSiteContent } from "@/lib/site-content";
@@ -24,7 +25,7 @@ export const Route = createFileRoute("/")({
     links: [canonicalLink("/")],
     meta: [
       { property: "og:url", content: pageUrl("/") },
-      { title: loaderData?.["seo_home_title"] || "Origin 13 Communication — Documentary Film & Visual Storytelling, Ethiopia" },
+      { title: loaderData?.["seo_home_title"] || "Origin 13 Communication | Creative Studio, Addis Ababa" },
       { name: "description", content: loaderData?.["seo_home_description"] || "Films, photography, live events, brand design and campaigns from an Addis Ababa team working across East Africa." },
       { property: "og:title", content: loaderData?.["seo_home_title"] || "Origin 13 Communication — Films, design & communications" },
       { property: "og:type", content: "website" },
@@ -42,12 +43,14 @@ function Hero() {
   const [i, setI] = useState(0);
   // Only download the slide being shown and the one after it, not all five at once.
   const [reached, setReached] = useState(0);
+  const [paused, setPaused] = useState(false);
   useEffect(() => { setReached((r) => Math.max(r, i)); }, [i]);
   const go = useCallback((d: number) => setI((x) => (x + d + slides.length) % slides.length), [slides.length]);
   useEffect(() => {
+    if (paused) return;
     const t = setTimeout(() => go(1), 7000);
     return () => clearTimeout(t);
-  }, [i, go]);
+  }, [i, go, paused]);
   const s = slides[i] ?? slides[0];
   if (!s) return null;
 
@@ -79,7 +82,7 @@ function Hero() {
             {slides.map((f, idx) => (
               <button key={f.id} onClick={() => setI(idx)} className="group min-w-0 flex-1 text-left" aria-label={`Show ${f.tag}`}>
                 <span className="relative block h-px w-full overflow-hidden bg-foreground/20">
-                  {idx === i && <span key={i} className="absolute inset-0 bg-primary animate-progress" />}
+                  {idx === i && <span key={`${i}-${paused}`} className={cn("absolute inset-0 bg-primary", !paused && "animate-progress")} />}
                   {idx < i && <span className="absolute inset-0 bg-foreground/60" />}
                 </span>
                 <span className={cn("mt-3 hidden text-xs font-medium transition-colors md:block", idx === i ? "text-foreground" : "text-muted-foreground group-hover:text-foreground")}>
@@ -89,6 +92,7 @@ function Hero() {
             ))}
           </div>
           <div className="flex gap-2">
+            <button onClick={() => setPaused((p) => !p)} className="rounded-full border border-border p-3 transition-colors hover:border-primary hover:text-primary" aria-label={paused ? "Play slideshow" : "Pause slideshow"} title={paused ? "Play" : "Pause"}>{paused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}</button>
             <button onClick={() => go(-1)} className="rounded-full border border-border p-3 transition-colors hover:border-primary hover:text-primary" aria-label="Previous"><ChevronLeft className="h-4 w-4" /></button>
             <button onClick={() => go(1)} className="rounded-full border border-border p-3 transition-colors hover:border-primary hover:text-primary" aria-label="Next"><ChevronRight className="h-4 w-4" /></button>
           </div>
@@ -131,6 +135,8 @@ function Home() {
       </Published>
 
       <Published name="home_partners"><PartnerStrip /></Published>
+
+      <Published name="home_showreel"><Showreel /></Published>
 
       <Published name="home_work">
       {/* Featured work */}

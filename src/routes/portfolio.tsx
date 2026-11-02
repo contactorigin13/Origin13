@@ -11,7 +11,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { BrandSlideshow } from "@/components/site/BrandSlideshow";
 import { useSiteContent } from "@/lib/site-content";
-import { useProjects, type Project } from "@/lib/projects";
+import { storyVideoUrl, toEmbedUrl, useProjects, type Project } from "@/lib/projects";
 import { BRAND_CLIENTS, SERVICES, WORK_SHOWCASE, type WorkTile } from "@/data/studio";
 import { cn } from "@/lib/utils";
 import { resolvePortfolioContent, type PortfolioContent } from "@/lib/portfolio-content";
@@ -283,7 +283,10 @@ function Portfolio() {
   const { data: allProjects = [] } = useProjects();
   const projects = allProjects.filter((p) => p.kind === "upload");
   for (const p of allProjects) {
-    if (p.kind === "story" && p.service && p.display_url) content.tiles.push({ id: p.id, title: p.title, service: p.service, kind: "photo", image: p.display_url, blurb: p.description });
+    if (p.kind === "story" && p.service && p.display_url) {
+      const video = storyVideoUrl(p);
+      content.tiles.push({ id: p.id, title: p.title, service: p.service, kind: video ? "video" : "photo", image: p.display_url, blurb: p.description, ...(video ? { video: toEmbedUrl(video) } : {}) });
+    }
     if (p.kind === "brand_kit" && p.slides.length) {
       content.brands.push({ id: p.id, name: p.title, description: p.subtitle });
       p.slides.forEach((sl, i) => content.tiles.push({ id: `${p.id}-${i}`, title: sl.title, service: "branding", kind: "photo", client: p.id, blurb: sl.text, ...(sl.display_url ? { image: sl.display_url } : {}), ...(sl.chapter ? { chapter: sl.chapter } : {}) }));

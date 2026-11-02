@@ -44,13 +44,22 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
-// The temporary *.vercel.app address must not compete with the real domain in search results.
-function withRobotsHeader(request: Request, response: Response): Response {
+// Safe-by-default browser rules for every page, plus: the temporary *.vercel.app address
+// must not compete with the real domain in search results.
+const SECURITY_HEADERS: Record<string, string> = {
+  "X-Content-Type-Options": "nosniff",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=()",
+  // Other websites may not put this site inside a frame; scripts and styles are not restricted here.
+  "Content-Security-Policy": "frame-ancestors 'self'; base-uri 'self'; object-src 'none'",
+};
+
+function withSiteHeaders(request: Request, response: Response): Response {
   try {
-    const host = (request.headers.get("x-forwarded-host") ?? request.headers.get("host") ?? "").split(":")[0] ?? "";
-    if (!host.endsWith(".vercel.app")) return response;
     const headers = new Headers(response.headers);
-    headers.set("X-Robots-Tag", "noindex, nofollow");
+    for (const [key, value] of Object.entries(SECURITY_HEADERS)) if (!headers.has(key)) headers.set(key, value);
+    const host = (request.headers.get("x-forwarded-host") ?? request.headers.get("host") ?? "").split(":")[0] ?? "";
+    if (host.endsWith(".vercel.app")) headers.set("X-Robots-Tag", "noindex, nofollow");
     return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
   } catch {
     return response;
@@ -62,7 +71,7 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return withRobotsHeader(request, await normalizeCatastrophicSsrResponse(response));
+      return withSiteHeaders(request, await normalizeCatastrophicSsrResponse(response));
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {

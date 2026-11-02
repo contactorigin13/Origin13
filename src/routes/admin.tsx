@@ -1,4 +1,5 @@
 import { ManagePartners } from "@/components/site/ManagePartners";
+import { prepareImage } from "@/lib/image-prepare";
 import { ManageProjects } from "@/components/site/ManageProjects";
 import { IdentityBoardEditor } from "@/components/site/IdentityBoardEditor";
 import { createFileRoute } from "@tanstack/react-router";
@@ -153,7 +154,8 @@ function ManageCovers() {
   const [busy, setBusy] = useState<CoverPage | null>(null);
   const cropper = usePhotoCropper();
 
-  const upload = async (page: CoverPage, file: File) => {
+  const upload = async (page: CoverPage, original: File) => {
+    const file = await prepareImage(original);
     if (file.size > 10 * 1024 * 1024) { toast.error("Please choose a photo under 10 MB."); return; }
     setBusy(page);
     try {
@@ -277,7 +279,8 @@ function ManageHome() {
           buttonLabel: s.buttonLabel,
           buttonTo: s.buttonTo,
         };
-        const f = files[s.id];
+        const f0 = files[s.id];
+        const f = f0 ? await prepareImage(f0) : undefined;
         if (f) {
           if (f.size > 10 * 1024 * 1024) throw new Error("Please choose photos under 10 MB.");
           const ext = f.name.split(".").pop() || "jpg";

@@ -64,8 +64,9 @@ function Privacy() {
 
         <Section title="What we do not do">
           <p>
-            We do not use advertising or tracking cookies, and we do not currently use website analytics. We do not sell your personal information.
-            Some portfolio pages may show videos from other platforms such as YouTube or Vimeo; if you play one, that platform may set its own cookies under its own policy.
+            We do not use advertising or tracking cookies, and we do not sell your personal information.
+            To learn how many people visit and which pages are read, we use Vercel Web Analytics and Speed Insights. They count visits and measure page speed without cookies and without building a profile of you.
+            Some pages show videos from other platforms such as YouTube or Vimeo. A video’s preview picture comes from that platform, and once you press play, that platform may set its own cookies under its own policy.
           </p>
         </Section>
 
@@ -92,7 +93,7 @@ function Privacy() {
         </Section>
 
         <Section title="Changes to this policy">
-          <p>If we change how this website handles information, for example by adding analytics, we will update this page and its date.</p>
+          <p>If we change how this website handles information, for example by adding new tools, we will update this page and its date.</p>
         </Section>
 
         <Section title="Contact">

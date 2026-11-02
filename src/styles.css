@@ -368,3 +368,9 @@
 @media (prefers-reduced-motion: reduce) {
   .header-item { transition: none; }
 }
+
+/* Clear keyboard focus outline everywhere (zero specificity, so component styles can still override it). */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}

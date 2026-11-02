@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { prepareImage } from '@/lib/image-prepare';
 import { toast } from 'sonner';
 import { Upload } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -6,7 +7,8 @@ import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
 export function EditableMediaField({ id, value, onChange }: { id: string; value: string; onChange: (value: string) => void }) {
   const [busy, setBusy] = useState(false);
-  const upload = async (file: File) => {
+  const upload = async (original: File) => {
+    const file = await prepareImage(original);
     if (file.size > 10 * 1024 * 1024) { toast.error('Please choose a file under 10 MB.'); return; }
     setBusy(true);
     const path = `website/${crypto.randomUUID()}.${file.name.split('.').pop() || 'png'}`;

@@ -102,7 +102,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
     ],
-    scripts: [{ type: "application/ld+json", children: structuredDataJson(loaderData?.content) }],
+    scripts: [
+      { type: "application/ld+json", children: structuredDataJson(loaderData?.content) },
+      // Cookie-free visitor counts and page-speed data. They start working once Analytics and Speed Insights are switched on in the Vercel project.
+      { children: "window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};" },
+      { src: "/_vercel/insights/script.js", defer: true },
+      { src: "/_vercel/speed-insights/script.js", defer: true },
+    ],
     links: [
       {
         rel: "stylesheet",
@@ -152,8 +158,9 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-primary-foreground">Skip to content</a>
       <SiteHeader />
-      <main>
+      <main id="main" tabIndex={-1} className="outline-none">
         <PublishedPage><Outlet /></PublishedPage>
       </main>
       <Published name="site_footer"><SiteFooter /></Published>

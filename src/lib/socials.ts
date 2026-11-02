@@ -26,3 +26,9 @@ export function socialLinks(content: Record<string, string> | undefined): Social
   }
   return links;
 }
+
+/** Click-to-chat address for a WhatsApp number written in any style, e.g. "+251 91 122 3344". Empty when the number looks wrong. */
+export function whatsappLink(number: string | undefined): string {
+  const digits = (number ?? "").replace(/\D/g, "");
+  return digits.length >= 8 && digits.length <= 15 ? `https://wa.me/${digits}` : "";
+}

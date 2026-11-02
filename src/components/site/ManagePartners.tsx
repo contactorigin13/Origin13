@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { prepareImage } from "@/lib/image-prepare";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { ArrowDown, ArrowUp, Loader2, Pencil, Plus, Trash2, Upload } from "lucide-react";
@@ -35,7 +36,8 @@ export function ManagePartners() {
   const change = (next: Partner[]) => { setList(next); setDirty(true); };
   const patch = (i: number, v: Partial<Partner>) => change(list.map((p, j) => (j === i ? { ...p, ...v } : p)));
   const move = (i: number, d: number) => { const n = [...list]; const t = n[i + d]; if (!t) return; n[i + d] = n[i]!; n[i] = t; change(n); };
-  const upload = async (i: number, file: File) => {
+  const upload = async (i: number, original: File) => {
+    const file = await prepareImage(original);
     if (file.size > 5 * 1024 * 1024) { toast.error("Please choose a logo under 5 MB."); return; }
     setBusy(true);
     const path = `partners/${crypto.randomUUID()}.${file.name.split(".").pop() || "png"}`;

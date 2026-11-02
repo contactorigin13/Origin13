@@ -1,6 +1,6 @@
 import { resolveStudio } from "@/lib/editor-fields";
 import { emailList } from "@/lib/emails";
-import { socialLinks } from "@/lib/socials";
+import { socialLinks, whatsappLink } from "@/lib/socials";
 import { useVisibility } from "@/lib/visibility";
 import { isPagePublished } from "@/lib/publication";
 import { useSiteContent } from "@/lib/site-content";
@@ -50,8 +50,9 @@ export function SiteFooter() {
             <p>{company.address}</p>
             <p>{company.location}</p>
             <p className="text-muted-foreground">{company.hours}</p>
-            {socialLinks(c).length > 0 && (
+            {(socialLinks(c).length > 0 || whatsappLink(company.whatsapp)) && (
               <div className="flex flex-wrap gap-x-5 gap-y-2 pt-2">
+                {whatsappLink(company.whatsapp) && <a href={whatsappLink(company.whatsapp)} target="_blank" rel="noopener noreferrer" className="hover:text-primary">WhatsApp</a>}
                 {socialLinks(c).map((s) => (
                   <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer" className="hover:text-primary">{s.label}</a>
                 ))}

@@ -1,4 +1,5 @@
 import { useEffect, useState, type FormEvent } from "react";
+import { prepareImage } from "@/lib/image-prepare";
 import { useQueryClient } from "@tanstack/react-query";
 import { ArrowDown, ArrowUp, Loader2, Pencil, Plus, Save, Trash2 } from "lucide-react";
 import { toast } from "sonner";
@@ -50,10 +51,11 @@ export function ManageTeam() {
       let portrait = editing?.portrait ?? "";
       if (file) {
         if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) throw new Error("Choose a JPG, PNG or WebP photo.");
-        if (file.size > 10 * 1024 * 1024) throw new Error("Choose a photo smaller than 10 MB.");
-        const extension = file.type === "image/png" ? "png" : file.type === "image/webp" ? "webp" : "jpg";
+        const prepared = await prepareImage(file);
+        if (prepared.size > 10 * 1024 * 1024) throw new Error("Choose a photo smaller than 10 MB.");
+        const extension = prepared.type === "image/png" ? "png" : prepared.type === "image/webp" ? "webp" : "jpg";
         const path = `team/${crypto.randomUUID()}.${extension}`;
-        const { error: uploadError } = await supabase.storage.from(BUCKET).upload(path, file, { contentType: file.type });
+        const { error: uploadError } = await supabase.storage.from(BUCKET).upload(path, prepared, { contentType: prepared.type });
         if (uploadError) throw uploadError;
         uploadedPath = path;
         portrait = `storage:${path}`;
