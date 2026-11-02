@@ -46,7 +46,7 @@ export function SiteFooter() {
             {emailList(company.email).map((email) => (
               <a key={email} href={`mailto:${email}`} className="block hover:text-primary">{email}</a>
             ))}
-            <a href={company.phoneHref} className="block hover:text-primary">{company.phone}</a>
+            <p>{company.phone}</p>
             <p>{company.address}</p>
             <p>{company.location}</p>
             <p className="text-muted-foreground">{company.hours}</p>

@@ -41,7 +41,7 @@ function Contact() {
   const emails = emailList(company.email);
   const contactRows: { icon: LucideIcon; label: string; lines: string[]; href?: string; hrefs?: string[] }[] = [
   { icon: Mail, label: (site["contact_email_label"] ?? ""), lines: emails, hrefs: emails.map((e) => `mailto:${e}`) },
-  { icon: Phone, label: (site["contact_phone_label"] ?? ""), lines: [company.phone], href: company.phoneHref },
+  { icon: Phone, label: (site["contact_phone_label"] ?? ""), lines: [company.phone] },
   ...(whatsappLink(company.whatsapp) ? [{ icon: MessageCircle, label: "WhatsApp", lines: [`Chat on WhatsApp · ${company.whatsapp}`], href: whatsappLink(company.whatsapp) }] : []),
   { icon: MapPin, label: (site["contact_address_label"] ?? ""), lines: [company.address, company.location] },
   { icon: Clock, label: (site["contact_hours_label"] ?? ""), lines: [company.hours] },

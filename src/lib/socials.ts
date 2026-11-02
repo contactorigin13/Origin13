@@ -28,7 +28,8 @@ export function socialLinks(content: Record<string, string> | undefined): Social
 }
 
 /** Click-to-chat address for a WhatsApp number written in any style, e.g. "+251 91 122 3344". Empty when the number looks wrong. */
-export function whatsappLink(number: string | undefined): string {
+export function whatsappLink(number: string | undefined, message = "Hello Origin 13, I would like to talk about a project."): string {
   const digits = (number ?? "").replace(/\D/g, "");
-  return digits.length >= 8 && digits.length <= 15 ? `https://wa.me/${digits}` : "";
+  // The ready-written text makes WhatsApp open a normal text chat (never a call).
+  return digits.length >= 8 && digits.length <= 15 ? `https://wa.me/${digits}?text=${encodeURIComponent(message)}` : "";
 }

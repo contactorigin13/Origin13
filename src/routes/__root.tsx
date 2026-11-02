@@ -93,6 +93,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Films, photography, live events, brand design and campaigns from an Addis Ababa team working across East Africa." },
       { name: "author", content: "Origin 13 Communication PLC" },
       { name: "theme-color", content: "#090909" },
+      // Stops phones from turning the phone number into a call link on their own.
+      { name: "format-detection", content: "telephone=no" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Origin 13 Communication" },
       { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
