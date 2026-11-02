@@ -33,3 +33,12 @@ export function whatsappLink(number: string | undefined, message = "Hello Origin
   // The ready-written text makes WhatsApp open a normal text chat (never a call).
   return digits.length >= 8 && digits.length <= 15 ? `https://wa.me/${digits}?text=${encodeURIComponent(message)}` : "";
 }
+
+const digitsOf = (value: string | undefined) => (value ?? "").replace(/\D/g, "");
+
+/** Where the phone number leads: a WhatsApp text chat (using the WhatsApp number if one is set, otherwise the phone number). */
+export const phoneChatLink = (company: { phone: string; whatsapp?: string | undefined }) => whatsappLink(company.whatsapp?.trim() ? company.whatsapp : company.phone);
+
+/** A separate WhatsApp entry is only needed when its number differs from the phone number. */
+export const hasSeparateWhatsapp = (company: { phone: string; whatsapp?: string | undefined }) =>
+  !!whatsappLink(company.whatsapp) && digitsOf(company.whatsapp) !== digitsOf(company.phone);

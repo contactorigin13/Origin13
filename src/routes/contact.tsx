@@ -2,7 +2,7 @@ import { getPageMetadata } from "@/lib/page-metadata.functions";
 import { canonicalLink, pageUrl } from "@/lib/site-url";
 import { resolveStudio } from "@/lib/editor-fields";
 import { emailList } from "@/lib/emails";
-import { whatsappLink } from "@/lib/socials";
+import { hasSeparateWhatsapp, phoneChatLink, whatsappLink } from "@/lib/socials";
 import { Published } from "@/components/site/Published";
 import { SiteText } from "@/components/site/SiteText";
 import { Button } from "@/components/ui/button";
@@ -39,10 +39,11 @@ function Contact() {
   const site = useSiteContent();
   const { company, services } = resolveStudio(site);
   const emails = emailList(company.email);
+  const phoneChat = phoneChatLink(company);
   const contactRows: { icon: LucideIcon; label: string; lines: string[]; href?: string; hrefs?: string[] }[] = [
   { icon: Mail, label: (site["contact_email_label"] ?? ""), lines: emails, hrefs: emails.map((e) => `mailto:${e}`) },
-  { icon: Phone, label: (site["contact_phone_label"] ?? ""), lines: [company.phone] },
-  ...(whatsappLink(company.whatsapp) ? [{ icon: MessageCircle, label: "WhatsApp", lines: [`Chat on WhatsApp · ${company.whatsapp}`], href: whatsappLink(company.whatsapp) }] : []),
+  { icon: Phone, label: (site["contact_phone_label"] ?? ""), lines: phoneChat ? [company.phone, "Tap to chat on WhatsApp"] : [company.phone], ...(phoneChat ? { href: phoneChat } : {}) },
+  ...(hasSeparateWhatsapp(company) ? [{ icon: MessageCircle, label: "WhatsApp", lines: [`Chat on WhatsApp · ${company.whatsapp}`], href: whatsappLink(company.whatsapp) }] : []),
   { icon: MapPin, label: (site["contact_address_label"] ?? ""), lines: [company.address, company.location] },
   { icon: Clock, label: (site["contact_hours_label"] ?? ""), lines: [company.hours] },
 ];
@@ -76,7 +77,7 @@ function Contact() {
                 {c.lines.map((l, i) => {
                   const href = c.hrefs?.[i] ?? c.href ?? "";
                   return href ? (
-                    <a key={l} href={href} className="mt-2 block text-lg hover:text-primary">{l}</a>
+                    <a key={l} href={href} {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="mt-2 block text-lg hover:text-primary">{l}</a>
                   ) : (
                     <p key={l} className="mt-2 text-lg">{l}</p>
                   );
